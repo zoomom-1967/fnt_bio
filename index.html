@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에프앤티바이오 — 제품 카탈로그 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#0d1a14; --sage:#5a7a5a; --sage-light:#8aaa80;
+  --cream:#f7f4ed; --warm-white:#fdfcf8; --gold:#c8960a;
+  --line:rgba(90,122,90,0.18); --rust:#b84020;
+  --c-hanwoo:#8a3010; --c-gut:#1a6038; --c-heat:#0a6898;
+  --c-fungi:#5a3890; --c-ferment:#7a5010;
+  --c-pig:#c05818; --c-poultry:#1a5888;
+  --c-mineral:#1a5878;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;}
+
+/* ── HEADER ── */
+.site-header{background:#1a4a30;position:sticky;top:0;z-index:100;}
+.header-inner{max-width:1400px;margin:0 auto;padding:22px 48px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;}
+.logo-block{display:flex;align-items:center;gap:6px;}
+.logo-fnt{font-family:'Bebas Neue',sans-serif;font-size:34px;color:#fff;letter-spacing:5px;line-height:1;}
+.logo-bio{font-family:'Bebas Neue',sans-serif;font-size:34px;color:#7de8a0;letter-spacing:5px;line-height:1;}
+.logo-ko{font-size:13px;font-weight:400;color:rgba(255,255,255,0.65);letter-spacing:.3px;}
+.logo-en{display:none;}
+.header-meta{display:none;}
+.header-contact{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:50px;padding:7px 22px;}
+.hc-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,0.9);font-weight:500;}
+.hc-item a{color:rgba(255,255,255,0.9);text-decoration:none;}
+.hc-sep{color:rgba(255,255,255,0.3);padding:0 8px;}
+.hc-icon{font-size:14px;}
+
+/* ── HERO (hidden) ── */
+.hero{display:none;}
+.hs,.hs-n,.hs-l,.hs-div{display:none;}
+
+/* ── LIVESTOCK TYPE TABS (상위 탭) ── */
+.type-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,0.08);}
+.type-nav-inner{max-width:1400px;margin:0 auto;padding:0 48px;display:flex;gap:0;}
+.type-btn{display:flex;align-items:center;gap:10px;padding:14px 28px;font-size:13px;font-weight:800;color:rgba(255,255,255,0.45);cursor:pointer;border:none;border-bottom:3px solid transparent;background:none;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;transition:all .2s;letter-spacing:.3px;}
+.type-btn:hover{color:rgba(255,255,255,0.8);}
+.type-btn.active{color:#fff;border-bottom-color:var(--gold);}
+.type-icon{font-size:16px;}
+.type-count{font-size:10px;font-weight:700;background:rgba(255,255,255,0.12);padding:2px 8px;border-radius:10px;letter-spacing:.5px;}
+.type-btn.active .type-count{background:var(--gold);color:var(--ink);}
+
+/* ── CATEGORY NAV (하위 탭) ── */
+.cat-nav{background:var(--warm-white);border-bottom:1px solid var(--line);position:sticky;top:130px;z-index:90;}
+.cat-nav-inner{max-width:1400px;margin:0 auto;padding:0 48px;display:flex;overflow-x:auto;scrollbar-width:none;}
+.cat-nav-inner::-webkit-scrollbar{display:none;}
+.cat-btn{flex-shrink:0;display:flex;align-items:center;gap:8px;padding:14px 20px;font-size:12px;font-weight:700;color:var(--sage);cursor:pointer;border:none;border-bottom:2.5px solid transparent;background:none;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;transition:all .2s;}
+.cat-btn:hover{color:var(--ink);}
+.cat-btn.active{color:var(--ink);border-bottom-color:currentColor;}
+.cdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* ── BODY ── */
+.catalog-body{max-width:1400px;margin:0 auto;padding:56px 48px;}
+.category-section{margin-bottom:64px;opacity:0;transform:translateY(18px);transition:opacity .55s,transform .55s;}
+.category-section.visible{opacity:1;transform:translateY(0);}
+
+/* ── CAT HEADER ── */
+.cat-header{display:flex;align-items:stretch;margin-bottom:26px;border-radius:4px;overflow:hidden;}
+.cat-stripe{width:6px;flex-shrink:0;}
+.cat-hbody{flex:1;background:var(--warm-white);border:1px solid var(--line);border-left:none;padding:16px 22px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
+.cat-num{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;color:var(--sage-light);}
+.cat-title{font-family:'DM Serif Display',serif;font-size:26px;letter-spacing:-.3px;}
+.cat-title em{font-style:italic;}
+.cat-badge{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:2px;padding:3px 11px;border-radius:20px;color:#fff;align-self:center;}
+.cat-desc{font-size:11px;color:var(--sage);margin-left:auto;text-align:right;line-height:1.6;}
+
+/* ── PRODUCT CARDS ── */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(286px,1fr));gap:16px;}
+.product-card{background:var(--warm-white);border:1px solid var(--line);border-radius:3px;overflow:hidden;cursor:pointer;text-decoration:none;display:block;position:relative;transition:transform .22s,box-shadow .22s,border-color .22s;}
+.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-accent,#888);transform:scaleX(0);transform-origin:left;transition:transform .28s;}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(13,26,20,0.13);border-color:transparent;}
+.product-card:hover::before{transform:scaleX(1);}
+.card-swatch{height:5px;}
+.card-body{padding:20px 20px 16px;}
+.card-cat-tag{font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.card-cat-tag::after{content:'';flex:1;height:1px;background:var(--line);}
+.card-name{font-size:20px;font-weight:900;color:var(--ink);line-height:1.2;letter-spacing:-.4px;margin-bottom:4px;}
+.card-name-en{font-size:10px;color:var(--sage);letter-spacing:.8px;margin-bottom:10px;}
+.card-desc{font-size:11.5px;color:#5a6a5a;line-height:1.7;margin-bottom:13px;}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.card-tag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:2px;border:1px solid var(--line);color:var(--sage);background:var(--cream);}
+.card-footer{padding:10px 20px;background:rgba(13,26,20,0.025);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;}
+.card-action{font-size:11px;font-weight:700;color:var(--sage);display:flex;align-items:center;gap:6px;}
+.card-action svg{width:13px;height:13px;transition:transform .18s;}
+.product-card:hover .card-action svg{transform:translateX(3px);}
+.new-badge{font-size:9px;font-weight:800;padding:2px 6px;border-radius:2px;color:#fff;background:var(--rust);letter-spacing:1px;margin-left:5px;}
+
+/* 축종 적용 배지 */
+.species-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;}
+.sp-tag{font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:.5px;}
+.sp-cattle{background:rgba(138,48,16,0.1);color:var(--c-hanwoo);border:1px solid rgba(138,48,16,0.2);}
+.sp-pig{background:rgba(192,88,24,0.1);color:var(--c-pig);border:1px solid rgba(192,88,24,0.2);}
+.sp-poultry{background:rgba(26,88,136,0.1);color:var(--c-poultry);border:1px solid rgba(26,88,136,0.2);}
+
+/* ── CONTACT ── */
+.contact-strip{background:var(--ink);padding:48px 48px;}
+.contact-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.contact-copy h3{font-family:'DM Serif Display',serif;font-size:30px;color:#fff;margin-bottom:5px;}
+.contact-copy p{font-size:12px;color:rgba(255,255,255,0.38);}
+.contact-info{display:flex;gap:28px;flex-wrap:wrap;}
+.ci{display:flex;flex-direction:column;gap:4px;}
+.ci-l{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;}
+.ci-v{font-size:13px;color:#fff;font-weight:600;}
+.ci-v a{color:#fff;text-decoration:none;}
+.site-footer{background:#070f0a;padding:18px 48px;text-align:center;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:1px;}
+
+/* ── ARROW SVG shorthand ── */
+.arr-svg{display:inline-block;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <span class="logo-fnt">FNT</span><span class="logo-bio"> BIO</span>
+    </div>
+    <span class="logo-ko">(주)에프앤티바이오</span>
+    <div class="header-contact">
+      <span class="hc-item"><span class="hc-icon">📞</span> 010-5269-1459</span>
+      <span class="hc-sep">|</span>
+      <span class="hc-item"><span class="hc-icon">✉️</span> <a href="mailto:h2691459@naver.com">h2691459@naver.com</a></span>
+    </div>
+  </div>
+</header>
+
+
+<!-- 축종 상위 탭 -->
+<div class="type-nav">
+  <div class="type-nav-inner">
+    <button class="type-btn active" data-type="all">
+      <span class="type-icon">🐾</span>전체 축종
+    </button>
+    <button class="type-btn" data-type="cattle">
+      <span class="type-icon">🐄</span>축우 (한우·낙농)
+    </button>
+    <button class="type-btn" data-type="pig">
+      <span class="type-icon">🐷</span>양돈
+    </button>
+    <button class="type-btn" data-type="poultry">
+      <span class="type-icon">🐔</span>양계·오리
+    </button>
+  </div>
+</div>
+
+<!-- 카테고리 탭 -->
+<nav class="cat-nav">
+  <div class="cat-nav-inner">
+    <button class="cat-btn active" data-cat="all"><span class="cdot" style="background:var(--gold)"></span>전체 카테고리</button>
+    <button class="cat-btn" data-cat="hanwoo"><span class="cdot" style="background:var(--c-hanwoo)"></span>고급육 및 생산성 향상</button>
+    <button class="cat-btn" data-cat="gut"><span class="cdot" style="background:var(--c-gut)"></span>장 건강</button>
+    <button class="cat-btn" data-cat="heat"><span class="cdot" style="background:var(--c-heat)"></span>고온스트레스 · 비타민·미네랄</button>
+    <button class="cat-btn" data-cat="fungi"><span class="cdot" style="background:var(--c-fungi)"></span>항곰팡이·항톡신</button>
+    <button class="cat-btn" data-cat="ferment"><span class="cdot" style="background:var(--c-ferment)"></span>발효 촉진제</button>
+  </div>
+</nav>
+
+<main class="catalog-body">
+
+<!-- ════════════════ 01 고급육 및 생산성 향상 ════════════════ -->
+<section class="category-section" data-cat="hanwoo" id="cat-hanwoo">
+  <div class="cat-header">
+    <div class="cat-stripe" style="background:var(--c-hanwoo)"></div>
+    <div class="cat-hbody">
+      <span class="cat-num">01</span>
+      <h2 class="cat-title" style="color:var(--c-hanwoo)">고급육 및 <em>생산성 향상</em></h2>
+      <p class="cat-desc">마블링·등심단면적·증체량 개선 / 1++ 출하 성적 극대화</p>
+    </div>
+  </div>
+  <div class="products-grid">
+
+    <a class="product-card" href="products/rumenpass-methionine.html" style="--card-accent:var(--c-hanwoo)" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#2a1800,#8a3010)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:var(--c-hanwoo)">반추위 보호 메티오닌</p>
+        <h3 class="card-name">루멘패스 MET</h3>
+        <p class="card-name-en">Rumenpass Methionine · DL-Met 60%</p>
+        <p class="card-desc">소장 직접 흡수로 단백질 1.8% 절감, 유량·유단백 유지. 비육우 FCR↓, 도체중·마블링 향상. RP-Lys 병용 시 효과 증가.</p>
+        <div class="card-tags"><span class="card-tag">DL-Met 60%</span><span class="card-tag">등심단면적</span><span class="card-tag">사료비 절감</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/rumenpass-lysine.html" style="--card-accent:#0a7888" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#082038,#0a7888)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:#0a7888">반추위 보호 라이신</p>
+        <h3 class="card-name">루멘패스 라이신</h3>
+        <p class="card-name-en">Rumenpass Lysine · L-Lysine HCl 50%</p>
+        <p class="card-desc">수소화 지질 코팅, 소장 고흡수. 유성분·유량 개선, 한우 고급육 생산(등심단면적·근내지방). RP-MET 병행 시너지.</p>
+        <div class="card-tags"><span class="card-tag">L-Lysine 50%</span><span class="card-tag">소장 고흡수</span><span class="card-tag">근내지방</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/twobull-hanwoo.html" style="--card-accent:var(--c-hanwoo)" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#100808,#6a2808)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:var(--c-hanwoo)">1++ 출하 전용 보조사료</p>
+        <h3 class="card-name">투뿔한우</h3>
+        <p class="card-name-en">Two Bull Hanwoo · Premium 1++ Solution</p>
+        <p class="card-desc">유기태 Zn/Se/Mn/Cu/Cr + 루멘패스 비타민E·C 복합. 마블링 강화, 등심단면적 확대, 항산화·스트레스 저감으로 출하 성적 완성.</p>
+        <div class="card-tags"><span class="card-tag">유기태 미네랄</span><span class="card-tag">마블링 강화</span><span class="card-tag">RP-비타민C</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/energy-plus.html" style="--card-accent:#1a6090" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#0a2840,#1a7080)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#1a6090">고효율 유화제 · 전 축종</p>
+        <h3 class="card-name">에너지 플러스</h3>
+        <p class="card-name-en">Excential Energy Plus · ORFFA</p>
+        <p class="card-desc">피마자유 유래 비이온계 유화제. 지방소화·성장·장건강 동시 개선. 증체량·사료효율 개선, 계란 품질 향상. 전 축종 적용.</p>
+        <div class="card-tags"><span class="card-tag">고효율 유화제</span><span class="card-tag">증체량 개선</span><span class="card-tag">전 축종</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/rumenpass-lysine.html" style="--card-accent:#6a3080" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#200830,#6a2880)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:#6a3080">반추위 보호 콜린<span class="new-badge">NEW</span></p>
+        <h3 class="card-name">루멘패스 콜린</h3>
+        <p class="card-name-en">Rumenpass Choline · 코팅 콜린 25%+</p>
+        <p class="card-desc">염화콜린 반추위 바이패스 후 제4위 흡수. 간기능 개선, 체세포수 감소, 생산성 향상. 착유우 분만 전후 필수.</p>
+        <div class="card-tags"><span class="card-tag">코팅 콜린 25%+</span><span class="card-tag">간기능 개선</span><span class="card-tag">체세포수↓</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/prosurple.html" style="--card-accent:#0a8888" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#082028,#0a9890)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:#0a8888">발효대두박 단백질</p>
+        <h3 class="card-name">프로서플</h3>
+        <p class="card-name-en">Prosurple · Fermented Soybean Meal CP 45%+</p>
+        <p class="card-desc">유산균 혐기성 발효, 항영양인자 제거. CP 45%+(실분석 50%내외). 기호성 우수, 바이패스 단백질율 높음, 반추위 조기발달.</p>
+        <div class="card-tags"><span class="card-tag">CP 45%+</span><span class="card-tag">항영양인자 제거</span><span class="card-tag">바이패스 단백</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/highend-prosurple.html" style="--card-accent:#6840a0" data-species="cattle pig">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#200840,#5030a0)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span></div>
+        <p class="card-cat-tag" style="color:#6840a0">발효대두박 + NSP 효소</p>
+        <h3 class="card-name">하이앤드 프로서플</h3>
+        <p class="card-name-en">High-End Prosurple · CP 50%+ / NSP Enzyme</p>
+        <p class="card-desc">유산균·효모 발효 후 NSP 효소 첨가. CP 50%+, 펩타이드 형태로 이용성 극대화. 항산화·항염증 효과. 전 축종 적용.</p>
+        <div class="card-tags"><span class="card-tag">CP 50%+</span><span class="card-tag">NSP 효소</span><span class="card-tag">항산화·항염증</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/yea-sacc.html" style="--card-accent:#4a7020" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#1a3008,#5a8828)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#4a7020">살아있는 활성효모</p>
+        <h3 class="card-name">이섹 (YEA-SACC)</h3>
+        <p class="card-name-en">Yea-Sacc · Saccharomyces Cerevisiae 10⁸ CFU/g</p>
+        <p class="card-desc">소화율 37.5→73.21% 향상. BMS 8.5→10.75, 등심단면적 95.9→131㎠. 모돈 비유량↑, 산란율↑, 육계 성장률↑.</p>
+        <div class="card-tags"><span class="card-tag">활성효모 10⁸ CFU</span><span class="card-tag">소화율 2배+</span><span class="card-tag">BMS·등심단면적</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/yea-sacc.html" style="--card-accent:#8a5010" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#2a1808,#7a4018)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#8a5010">오메가3 공급원<span class="new-badge">NEW</span></p>
+        <h3 class="card-name">린텍스 (LIN TEX)</h3>
+        <p class="card-name-en">Linseed · CP 20%+ / 조지방 23%+ / 오메가3</p>
+        <p class="card-desc">특허 공정 아마씨 기반 오메가3 공급원. 번식성적·등심단면적·근내지방 개선, 체세포수 감소. 양돈 30~100g/두/일, 양계 5~20g/수/일.</p>
+        <div class="card-tags"><span class="card-tag">오메가3 고함유</span><span class="card-tag">번식성적 개선</span><span class="card-tag">CLA 지방산</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/hanwoo-breed-plus.html" style="--card-accent:#b84020" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#2a0808,#882010)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:#b84020">번식우 전용 · 유기태 미네랄</p>
+        <h3 class="card-name">한우 번식 플러스</h3>
+        <p class="card-name-en">Hanwoo Breed Plus · 번식우 전용</p>
+        <p class="card-desc">유기태 미네랄 + 베타카로틴 고농축 + 항산화 비타민E 복합. 번식우 전용 설계. 두당 20g/일로 간편 급여.</p>
+        <div class="card-tags"><span class="card-tag">유기태 미네랄</span><span class="card-tag">베타카로틴 고농축</span><span class="card-tag">비타민E</span><span class="card-tag">20g/일</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ════════════════ 02 장 건강 ════════════════ -->
+<section class="category-section" data-cat="gut" id="cat-gut">
+  <div class="cat-header">
+    <div class="cat-stripe" style="background:var(--c-gut)"></div>
+    <div class="cat-hbody">
+      <span class="cat-num">02</span>
+      <h2 class="cat-title" style="color:var(--c-gut)">장 <em>건강</em></h2>
+      <p class="cat-desc">반추위 pH 안정·산증 예방 / 소화율·장내환경 최적화</p>
+    </div>
+  </div>
+  <div class="products-grid">
+
+    <a class="product-card" href="products/rupromin-balance.html" style="--card-accent:var(--c-gut)" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#082018,#2a8840)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:var(--c-gut)">반추위 완충제</p>
+        <h3 class="card-name">루프로민 밸런스</h3>
+        <p class="card-name-en">Rupromin Balance · Acid Buff 1.5배</p>
+        <p class="card-desc">알칼리제+버퍼제 복합. 중조 대비 2.6배 완충력. pH 즉시 상승 후 지속 유지. 건물 섭취량 증가, 반추위 산독증 예방, 생산성 개선.</p>
+        <div class="card-tags"><span class="card-tag">중조대비 2.6배</span><span class="card-tag">산독증 예방</span><span class="card-tag">섭취량↑</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/pre-yeastzyme.html" style="--card-accent:#1a7038" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#081808,#1a6030)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#1a7038">효소·효모균 복합 · 조달청 등록</p>
+        <h3 class="card-name">프리이스트자임 FB</h3>
+        <p class="card-name-en">Pre-Yeastzyme FB · 조달청 등록제품</p>
+        <p class="card-desc">NSP·단백질 효소제 + 유기산 + 특허 효모·고초균. 분변 스코어 개선, 장내 유익균 활성화, 단백질 소화율 개선. 전 축종.</p>
+        <div class="card-tags"><span class="card-tag">조달청 등록</span><span class="card-tag">분변 스코어↑</span><span class="card-tag">유익균 활성화</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/enzyme-series.html" style="--card-accent:#c89010" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#201000,#7a5808)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#c89010">NSP 효소제 &amp; 피타제 풀 라인업</p>
+        <h3 class="card-name">효소제 시리즈</h3>
+        <p class="card-name-en">NSP Enzyme &amp; Phytase · 6종 · 25kg 포장</p>
+        <p class="card-desc">알파-아밀라제·베타만나아제·자이라나제·피타제·셀룰라제·알칼리네프로테아제 6종. 국내 최경제적 가격. 인 흡수 개선, 항생제 대체.</p>
+        <div class="card-tags"><span class="card-tag">6종 효소</span><span class="card-tag">피타제 포함</span><span class="card-tag">항생제 대체</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <!-- GOD 신규 -->
+    <a class="product-card" href="products/enzyme-series.html" style="--card-accent:#c05818" data-species="pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#301008,#b04010)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#c05818">항균·항톡신 효소제<span class="new-badge">NEW</span></p>
+        <h3 class="card-name">GOD (글루코옥시데이즈)</h3>
+        <p class="card-name-en">Glucose Oxidase 10,000 U/g</p>
+        <p class="card-desc">Aspergillus niger·Penicillum 균주 발효 효소제. 항균 및 항톡신 효과, 장건강·소화 활동 개선. 가장 경제적인 장건강 보조사료.</p>
+        <div class="card-tags"><span class="card-tag">GOD 10,000 U/g</span><span class="card-tag">항균·항톡신</span><span class="card-tag">장건강 개선</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <!-- Thermostable Phytase 신규 -->
+    <a class="product-card" href="products/enzyme-series.html" style="--card-accent:#1a5888" data-species="pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#081830,#1a5888)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#1a5888">내열성 인분해 효소<span class="new-badge">NEW</span></p>
+        <h3 class="card-name">피타아제 (Thermostable Phytase)</h3>
+        <p class="card-name-en">Phytase 10,000 U/g · 85°C 이상 안정</p>
+        <p class="card-desc">Aspergillus miger 균주 인분해 효소. 양계(오리) 피틴산 분해율 60%+, 무기태 인 대체, 토양오염 방지. 고온 가공사료에서도 안정.</p>
+        <div class="card-tags"><span class="card-tag">Phytase 10,000 U/g</span><span class="card-tag">피틴산 분해 60%+</span><span class="card-tag">내열성 85°C</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/yea-sacc.html" style="--card-accent:var(--c-gut)" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#2a1808,#7a4018)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:var(--c-gut)">오메가3 · 항염증 · 체세포 관리</p>
+        <h3 class="card-name">린텍스 (LIN TEX)</h3>
+        <p class="card-name-en">Linseed · 항염증 · 체세포수 감소</p>
+        <p class="card-desc">젖소 체세포수 감소 및 항염증 효과. 사료 효율 개선. 축산물 내 오메가-3·CLA 지방산 함량 증가. 양돈·양계 소화 및 면역 개선.</p>
+        <div class="card-tags"><span class="card-tag">항염증</span><span class="card-tag">체세포수↓</span><span class="card-tag">오메가3·CLA</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ════════════════ 03 고온 스트레스 ════════════════ -->
+<section class="category-section" data-cat="heat" id="cat-heat">
+  <div class="cat-header">
+    <div class="cat-stripe" style="background:var(--c-heat)"></div>
+    <div class="cat-hbody">
+      <span class="cat-num">03</span>
+      <h2 class="cat-title" style="color:var(--c-heat)">고온스트레스 · <em>비타민·미네랄</em></h2>
+      <p class="cat-desc">THI 기반 단계별 대응 / 전 구간 미네랄·비타민 통합 관리</p>
+    </div>
+  </div>
+  <div class="products-grid">
+
+    <a class="product-card" href="products/cool-1.html" style="--card-accent:var(--c-heat)" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#0a5890,#0a9aca)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:var(--c-heat)">THI 72~79 · 전해질 복합</p>
+        <h3 class="card-name">시원해 1호</h3>
+        <p class="card-name-en">HV-D 전해질 제재 · Na·K·Mg</p>
+        <p class="card-desc">Na·K·Mg 전해질 복합 공급. 수분 균형 유지, 열스트레스 손실 미네랄 보충, 반추위 완충액 역할, 산증 예방. 고온기 2주 전 사전 급여 권장.</p>
+        <div class="card-tags"><span class="card-tag">Na·K·Mg</span><span class="card-tag">반추위 완충</span><span class="card-tag">산증 예방</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/cool-2.html" style="--card-accent:#c05010" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#0a5890,#e07820)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:#c05010">THI 80+ · 3중 방어</p>
+        <h3 class="card-name">시원해 2호</h3>
+        <p class="card-name-en">HV-D 미네랄/비타민 제재</p>
+        <p class="card-desc">유기태 Se·Zn + 코팅 비타민E·C + 비테인 3중 방어. 고온 스트레스 예방·빠른 회복, 식욕 유지, 면역력 강화, 번식 성적 안정화.</p>
+        <div class="card-tags"><span class="card-tag">유기태 Se·Zn</span><span class="card-tag">코팅 비타민E·C</span><span class="card-tag">비테인</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+
+    <a class="product-card" href="products/rumenpass-lysine.html" style="--card-accent:#1a5898" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#081030,#1a5898)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:#1a5898">반추위 보호 코팅 비타민</p>
+        <h3 class="card-name">루멘패스 비타민 AD3E</h3>
+        <p class="card-name-en">Rumenpass Vit AD3E · 마이크로캡슐</p>
+        <p class="card-desc">마이크로캡슐 기술로 반추위 내 파괴 없이 소장 흡수 보장. 비타민A 500만IU + D3 100만IU + E 15만mg/kg. 송아지~비육~착유우 전 구간.</p>
+        <div class="card-tags"><span class="card-tag">비타민A 500만IU</span><span class="card-tag">D3 100만IU</span><span class="card-tag">E 15만mg</span><span class="card-tag">반추위 바이패스</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/vita-allq.html" style="--card-accent:#2060a8" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#081030,#2060a8)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:#2060a8">고함량 비타민 복합제 · 전 구간</p>
+        <h3 class="card-name">비타올큐</h3>
+        <p class="card-name-en">Vita All Q · 초고함량 비타민 복합</p>
+        <p class="card-desc">비타민A 800만IU + D3 200만IU + E 3만mg/kg 초고함량 복합. 송아지~비육~번식우 전 구간 통합 관리. 면역력·생산성 전반 개선.</p>
+        <div class="card-tags"><span class="card-tag">비타민A 800만IU</span><span class="card-tag">D3 200만IU</span><span class="card-tag">E 3만mg</span><span class="card-tag">전 구간</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/mineral-allq-gold.html" style="--card-accent:#c89010" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#100800,#6a4000)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:#c89010">고함량 미네랄·비타민 복합제</p>
+        <h3 class="card-name">미네랄올큐 골드</h3>
+        <p class="card-name-en">Mineral AllQ Gold · 강력 고함량 스펙</p>
+        <p class="card-desc">강력한 고함량 스펙으로 전 구간 통합 관리. 번식 성적 극대화, 성장 촉진, 소득 증대. 한우·낙농 전용 설계.</p>
+        <div class="card-tags"><span class="card-tag">고함량 복합 스펙</span><span class="card-tag">전 구간 통합</span><span class="card-tag">번식 성적 극대화</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/mineral-allq-gold.html" style="--card-accent:#a07010" data-species="cattle">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#0a0800,#5a3800)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span></div>
+        <p class="card-cat-tag" style="color:#a07010">미네랄·비타민 복합제 · 표준형</p>
+        <h3 class="card-name">미네랄올큐</h3>
+        <p class="card-name-en">Mineral AllQ · 균형 잡힌 미네랄·비타민</p>
+        <p class="card-desc">균형 잡힌 미네랄·비타민 복합 처방. 전 구간 기초 영양 관리. 번식·육성·비육우 전 단계 적용 가능한 표준형 미네랄 제품.</p>
+        <div class="card-tags"><span class="card-tag">미네랄·비타민 복합</span><span class="card-tag">전 구간 기초 영양</span><span class="card-tag">균형 처방</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+  
+  </div>
+</section>
+
+<!-- ════════════════ 04 항곰팡이·항톡신 ════════════════ -->
+<section class="category-section" data-cat="fungi" id="cat-fungi">
+  <div class="cat-header">
+    <div class="cat-stripe" style="background:var(--c-fungi)"></div>
+    <div class="cat-hbody">
+      <span class="cat-num">04</span>
+      <h2 class="cat-title" style="color:var(--c-fungi)">항곰팡이 · <em>항톡신</em></h2>
+      <p class="cat-desc">사료 곰팡이 원천 차단 / 마이코톡신 4단계 복합 대응</p>
+    </div>
+  </div>
+  <div class="products-grid">
+
+    <a class="product-card" href="products/micofung.html" style="--card-accent:#1a7a2a" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#0a3a12,#2a8a40)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#1a7a2a">천연 항곰팡이제 · ORFFA · 전 축종</p>
+        <h3 class="card-name">마이코펑 (Micofung®)</h3>
+        <p class="card-name-en">Anti-Fungal Feed Preservative · 감귤추출물+유기산</p>
+        <p class="card-desc">감귤추출물+유기산 복합. 곰팡이·박테리아·독소 동시 억제. 휘발성 낮아 장기 보존 안정성↑. 설비 부식 없음. 사료 톤당 250~2,000g.</p>
+        <div class="card-tags"><span class="card-tag">천연 유래</span><span class="card-tag">장기 지속</span><span class="card-tag">마이코톡신 예방</span><span class="card-tag">전 축종</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/toxidex-primus.html" style="--card-accent:var(--c-fungi)" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#200840,#6a2880)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:var(--c-fungi)">마이코톡신 흡착제 · Dex Ibérica</p>
+        <h3 class="card-name">톡시덱스 프리머스</h3>
+        <p class="card-name-en">Toxidex Primus® · 4단계 방어 체계</p>
+        <p class="card-desc">흡착→화학적파괴→간건강·자가해독→영양보강·회복. DON·ZEN·Afla 광범위 독소 대응. FCR 개선, 간수치 안정. 자돈·육계·송아지 우수.</p>
+        <div class="card-tags"><span class="card-tag">4단계 방어</span><span class="card-tag">광범위 독소</span><span class="card-tag">간 보호·해독</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ════════════════ 05 발효 촉진제 ════════════════ -->
+<section class="category-section" data-cat="ferment" id="cat-ferment">
+  <div class="cat-header">
+    <div class="cat-stripe" style="background:var(--c-ferment)"></div>
+    <div class="cat-hbody">
+      <span class="cat-num">05</span>
+      <h2 class="cat-title" style="color:var(--c-ferment)">발효 <em>촉진제</em></h2>
+      <p class="cat-desc">기호성 향상·발효사료 품질 업그레이드 / 악취 저감·부숙 촉진</p>
+    </div>
+  </div>
+  <div class="products-grid">
+
+    <a class="product-card" href="products/amaril.html" style="--card-accent:#c89010" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#201000,#8a5800)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#c89010">천연 식물성 첨가제 · 전 축종</p>
+        <h3 class="card-name">AMARIL (아마릴)</h3>
+        <p class="card-name-en">Natural Phytogenic Feed Additive · 계피추출물 6%+</p>
+        <p class="card-desc">계피추출물 6%+ + 개미산·인산 복합. 소화 활성화, 항균·항산화 효과, 항박테리아·효소자극. 자돈 1,000g/톤, 육계·산란계 500g/톤.</p>
+        <div class="card-tags"><span class="card-tag">계피추출물 6%+</span><span class="card-tag">항균·항산화</span><span class="card-tag">소화 활성화</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/dried-molasses.html" style="--card-accent:var(--c-ferment)" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#200800,#8a3800)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:var(--c-ferment)">에너지 공급원 · 발효 촉진</p>
+        <h3 class="card-name">건조당밀</h3>
+        <p class="card-name-en">Sweet Dried Molasses · Total Sugar 40%+</p>
+        <p class="card-desc">CP 9%+, 총당분 40%+. 반추위 미생물 활동 촉진, 기호성 개선. 비타민·미네랄 부형제, 사일리지 발효제. 양돈·육계·오리 사료톤당 0.5%.</p>
+        <div class="card-tags"><span class="card-tag">발효 촉진</span><span class="card-tag">기호성 개선</span><span class="card-tag">탑드레싱</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/csl-powder.html" style="--card-accent:#2878b8" data-species="cattle pig">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#0a1838,#1858a8)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span></div>
+        <p class="card-cat-tag" style="color:#2878b8">옥수수침지분말 · 발효 배지</p>
+        <h3 class="card-name">CSL POWDER</h3>
+        <p class="card-name-en">Corn Steep Liquor Powder · CP 42%+ / 총아미노산 79.5%</p>
+        <p class="card-desc">옥수수 침지 후 효모·효소 발효 농축 건조. CP 42%+, 총아미노산 79.5%. 단백질·아미노산 공급원 겸 발효 배지. 소화 이용율·면역 향상.</p>
+        <div class="card-tags"><span class="card-tag">CP 42%+</span><span class="card-tag">총아미노산 79.5%</span><span class="card-tag">유산균 배지</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+    <a class="product-card" href="products/natural-composting.html" style="--card-accent:#5a7a5a" data-species="cattle pig poultry">
+      <div class="card-swatch" style="background:linear-gradient(90deg,#2a1008,#1a5818)"></div>
+      <div class="card-body">
+        <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
+        <p class="card-cat-tag" style="color:#5a7a5a">천연 부숙제 · 25년 발효기술</p>
+        <h3 class="card-name">천연부숙제(FB)</h3>
+        <p class="card-name-en">Natural Composting Aid / FB</p>
+        <p class="card-desc">25년 발효기술 + 6년 실증. 효모 2×10⁸ + 바실러스 3×10⁹ + NSP·단백질 효소제. 분변 질소 극소화, 악취 저감, 부숙 시간 단축. 전 축종 1~2kg/톤.</p>
+        <div class="card-tags"><span class="card-tag">분변 질소 극소화</span><span class="card-tag">악취 저감</span><span class="card-tag">부숙기간 단축</span></div>
+      </div>
+      <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
+    </a>
+
+  </div>
+</section>
+
+
+</main>
+
+<!-- CONTACT -->
+<section class="contact-strip">
+  <div class="contact-inner">
+    <div class="contact-copy">
+      <h3>제품 상담 및 주문</h3>
+      <p>전문 상담사가 농장에 맞는 최적의 솔루션을 제안해 드립니다</p>
+    </div>
+    <div class="contact-info">
+      <div class="ci"><span class="ci-l">Company</span><span class="ci-v">주식회사 에프앤티바이오</span></div>
+      <div class="ci"><span class="ci-l">Address</span><span class="ci-v">서울특별시 송파구 올림픽로 336, 2107호</span></div>
+      <div class="ci"><span class="ci-l">Tel</span><span class="ci-v"><a href="tel:0264983588">02-6498-3588</a> / <a href="tel:01052691459">010-5269-1459</a></span></div>
+      <div class="ci"><span class="ci-l">Mail</span><span class="ci-v">h2691459@naver.com</span></div>
+      <div class="ci"><span class="ci-l">Blog</span><span class="ci-v"><a href="https://blog.naver.com/fnt_bio">blog.naver.com/fnt_bio</a></span></div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">© 2025 주식회사 에프앤티바이오 (FNT BIO CO., LTD.) · ALL RIGHTS RESERVED · 서울특별시 송파구 올림픽로 336, 2107호</footer>
+
+<script>
+// ── 축종 상위 필터 ──
+const typeBtns = document.querySelectorAll('.type-btn');
+const allCards = document.querySelectorAll('.product-card');
+const catSections = document.querySelectorAll('.category-section');
+
+let currentType = 'all';
+let currentCat  = 'all';
+
+function applyFilters() {
+  catSections.forEach(sec => {
+    const cat = sec.dataset.cat;
+    const catMatch = currentCat === 'all' || cat === currentCat;
+    // check if any card in section matches type
+    const cards = sec.querySelectorAll('.product-card');
+    let typeMatch = false;
+    cards.forEach(c => {
+      const sp = c.dataset.species || '';
+      if (currentType === 'all' || sp.includes(currentType)) typeMatch = true;
+    });
+    sec.style.display = (catMatch && typeMatch) ? '' : 'none';
+    // filter individual cards
+    cards.forEach(c => {
+      const sp = c.dataset.species || '';
+      const show = (currentType === 'all' || sp.includes(currentType));
+      c.style.display = show ? '' : 'none';
+    });
+  });
+}
+
+typeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    typeBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentType = btn.dataset.type;
+    applyFilters();
+  });
+});
+
+const catBtns = document.querySelectorAll('.cat-btn');
+catBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    catBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentCat = btn.dataset.cat;
+    applyFilters();
+  });
+});
+
+// ── Scroll reveal ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.05});
+catSections.forEach(sec => observer.observe(sec));
+
+// ── 카드 stagger ──
+window.addEventListener('load', () => {
+  document.querySelectorAll('.product-card').forEach((card, i) => {
+    card.style.opacity='0'; card.style.transform='translateY(14px)';
+    card.style.transition='opacity .36s ease,transform .36s ease,box-shadow .22s,border-color .22s';
+    setTimeout(()=>{ card.style.opacity=''; card.style.transform=''; }, 60+i*45);
+  });
+});
+</script>
+</body>
+</html>
