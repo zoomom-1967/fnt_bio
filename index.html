@@ -127,6 +127,101 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--i
 
 /* ── ARROW SVG shorthand ── */
 .arr-svg{display:inline-block;}
+
+/* ══════════════════════════════════════
+   반응형 — 태블릿 (768px 이하)
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* 헤더 */
+  .header-inner{padding:16px 20px;gap:7px;}
+  .logo-fnt,.logo-bio{font-size:26px;}
+  .logo-sep{font-size:20px;margin:0 5px;}
+  .logo-catalog{font-size:16px;letter-spacing:2px;}
+  .logo-ko{font-size:12px;}
+  .header-contact{padding:6px 14px;flex-wrap:wrap;justify-content:center;}
+  .hc-item{font-size:12px;}
+
+  /* 축종 탭 */
+  .type-nav-inner{padding:0 12px;gap:0;}
+  .type-btn{padding:11px 14px;font-size:12px;gap:6px;}
+  .type-icon{font-size:14px;}
+
+  /* 카테고리 탭 */
+  .cat-nav{top:108px;}
+  .cat-nav-inner{padding:0 12px;}
+  .cat-btn{padding:11px 12px;font-size:11px;gap:6px;}
+
+  /* 본문 */
+  .catalog-body{padding:32px 16px;}
+  .category-section{margin-bottom:44px;}
+
+  /* 카테고리 헤더 */
+  .cat-hbody{padding:13px 14px;gap:8px;}
+  .cat-title{font-size:20px;}
+  .cat-desc{display:none;}
+
+  /* 제품 그리드 — 모바일 2열 */
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .card-body{padding:14px 14px 12px;}
+  .card-name{font-size:15px;}
+  .card-name-en{font-size:9px;margin-bottom:7px;}
+  .card-desc{font-size:11px;line-height:1.6;margin-bottom:10px;}
+  .card-footer{padding:8px 14px;}
+  .card-action{font-size:11px;}
+  .species-tags{margin-bottom:7px;}
+  .sp-tag{font-size:8px;padding:2px 5px;}
+
+  /* 연락처 */
+  .contact-strip{padding:32px 20px;}
+  .contact-inner{flex-direction:column;align-items:flex-start;gap:20px;}
+  .contact-copy h3{font-size:22px;}
+  .contact-info{gap:16px;}
+  .ci-v{font-size:12px;}
+}
+
+/* ══════════════════════════════════════
+   반응형 — 모바일 소형 (480px 이하)
+══════════════════════════════════════ */
+@media (max-width: 480px) {
+  /* 헤더 — 로고만 심플하게 */
+  .header-inner{padding:13px 16px;gap:6px;}
+  .logo-fnt,.logo-bio{font-size:22px;letter-spacing:3px;}
+  .logo-sep{display:none;}
+  .logo-catalog{display:none;}
+  .logo-ko{font-size:11px;}
+  .header-contact{padding:5px 12px;}
+  .hc-sep{padding:0 5px;}
+  .hc-item{font-size:11px;}
+  .hc-icon{font-size:12px;}
+
+  /* 축종 탭 — 아이콘+텍스트 줄임 */
+  .cat-nav{top:90px;}
+  .type-nav-inner{padding:0 8px;}
+  .type-btn{padding:10px 10px;font-size:11px;gap:4px;}
+
+  /* 카테고리 탭 */
+  .cat-nav-inner{padding:0 8px;}
+  .cat-btn{padding:10px 10px;font-size:10.5px;gap:5px;}
+  .cdot{width:6px;height:6px;}
+
+  /* 본문 */
+  .catalog-body{padding:24px 12px;}
+
+  /* 제품 그리드 — 모바일 1열 */
+  .products-grid{grid-template-columns:1fr;gap:12px;}
+  .card-name{font-size:18px;}
+  .card-name-en{font-size:10px;}
+  .card-desc{font-size:12px;}
+  .card-tags{gap:4px;}
+  .card-tag{font-size:10px;}
+
+  /* 카테고리 헤더 */
+  .cat-hbody{flex-direction:column;align-items:flex-start;gap:4px;}
+  .cat-title{font-size:19px;}
+
+  /* 연락처 */
+  .contact-info{flex-direction:column;gap:12px;}
+}
 </style>
 </head>
 <body>

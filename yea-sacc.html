@@ -86,6 +86,124 @@ body{font-family:'Noto Sans KR',sans-serif;background:#b0bc98;display:flex;justi
 .ftr-co{font-size:11px;color:rgba(255,255,255,0.65);}
 .ftr-main{font-size:18px;font-weight:900;color:#fff;line-height:1.1;}
 .ftr-tel{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#ffe060;margin-top:3px;}
+
+/* ══════════════════════════════════════
+   반응형 — 태블릿 (768px 이하)
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+  body{padding:20px 12px;}
+  .flyer{width:100%;box-shadow:0 8px 32px rgba(0,0,0,0.18);}
+
+  /* 히어로 */
+  .hbody{flex-direction:column;min-height:auto;}
+  .hleft{padding:22px 20px 20px;}
+  .hname{font-size:38px !important;letter-spacing:-1px !important;}
+  .hright{width:100% !important;border-left:none !important;border-top:1px solid rgba(255,255,255,0.1);flex-direction:row;padding:16px 20px;gap:16px;justify-content:center;}
+
+  /* 컴포넌트 섹션들 */
+  .comp-inner,.comp-sec .comp-inner,
+  .desc-grid,.feat-grid,.points-grid,
+  .risk-grid,.data-tables,.full-data,
+  .rec-cards,.feat-grid{
+    display:flex !important;flex-direction:column !important;gap:12px !important;
+  }
+  .comp-right,.comp-left{width:100% !important;}
+  .desc-grid,.feat-grid,.points-grid,.risk-grid{grid-template-columns:1fr !important;}
+  .data-tables,.full-data{grid-template-columns:1fr !important;}
+  .rec-cards{grid-template-columns:1fr !important;}
+  .eff-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .bact-grid{grid-template-columns:repeat(2,1fr) !important;}
+
+  /* 섹션 패딩 */
+  .comp-sec,.feat-sec,.risk-sec,.desc-sec,.eff-sec,
+  .dose-sec,.cmp-sec,.mech-sec,.flow-sec,.bact-sec,
+  .points-sec,.rec-sec,.combo-sec,.caution-sec,
+  .data-sec,.dose-sec,.contact-bar{
+    padding:20px 16px !important;
+  }
+
+  /* 테이블 */
+  .dose-table,.cmp-table,.dt-table{font-size:11px !important;}
+  .dose-table th,.dose-table td,
+  .cmp-table th,.cmp-table td,
+  .dt-table th,.dt-table td{padding:7px 8px !important;}
+
+  /* 급여량 섹션 */
+  .dose-inner{flex-direction:column !important;}
+  .dose-right{width:100% !important;}
+
+  /* 푸터 */
+  .footer{flex-direction:column !important;}
+  .ftl{padding:18px 16px !important;}
+  .ft-cons{flex-direction:column !important;gap:10px !important;}
+  .ftr{width:100% !important;padding:16px !important;}
+  .ft-left{padding:18px 16px !important;}
+  .ft-contacts{flex-direction:column !important;gap:10px !important;}
+
+  /* 카탈로그 돌아가기 버튼 */
+  .back-to-catalog{top:10px;left:10px;font-size:12px;padding:7px 14px;}
+
+  /* 헤더 상단바 */
+  .htop{padding:8px 16px !important;flex-wrap:wrap;gap:4px;}
+  .hbadge{font-size:9px !important;}
+
+  /* 키포인트 스트립 */
+  .kp-strip{flex-wrap:wrap;}
+  .kp-item{flex:1 1 45%;border-bottom:1px solid rgba(255,255,255,0.1);}
+
+  /* power badge */
+  .power-badge{flex-wrap:wrap;gap:8px;padding:14px 16px !important;text-align:center;}
+
+  /* Pain strip */
+  .ps-items{flex-direction:column;gap:8px;}
+  .pain-strip{padding:14px 16px !important;}
+  .thi-strip{flex-direction:column !important;}
+  .thi-left{padding:14px 16px !important;}
+  .thi-right{flex-direction:row;border-top:1px solid rgba(255,255,255,0.2);}
+  .thi-box{flex:1;}
+
+  /* danger strip */
+  .danger-strip{padding:12px 16px !important;}
+  .ds-subs{flex-direction:column;gap:5px;}
+
+  /* dose section dark */
+  .dose-note{font-size:11px !important;}
+
+  /* 메커니즘 */
+  .mech-formula{flex-direction:column;align-items:center;}
+  .mf-plus,.mf-arrow{padding:8px 0;}
+
+  /* 플로우 차트 */
+  .flow-chart{flex-direction:column;}
+  .fc-plus{display:none;}
+
+  /* 결과 칩스 */
+  .result-chips{gap:6px;}
+  .rc{font-size:11px;padding:5px 12px;}
+
+  /* 비교표 */
+  .cmp-sec .sec-tag{font-size:8px;}
+
+  /* 도스 섹션 */
+  .dose-sec .dose-inner{flex-direction:column;}
+  .dose-rows{gap:6px;}
+}
+
+/* ══════════════════════════════════════
+   반응형 — 모바일 소형 (480px 이하)
+══════════════════════════════════════ */
+@media (max-width: 480px) {
+  body{padding:10px 6px;}
+  .hname{font-size:30px !important;}
+  .hpills{gap:5px;}
+  .hpill{font-size:10px !important;padding:4px 10px !important;}
+  .eff-grid{grid-template-columns:1fr !important;}
+  .bact-grid{grid-template-columns:repeat(2,1fr) !important;}
+  .kp-item{flex:1 1 100%;}
+  .dose-table,.cmp-table{font-size:10.5px !important;}
+  .ftr-tel{font-size:15px !important;}
+  .cb-tel{font-size:16px !important;}
+}
 </style>
 
 <style>
