@@ -125,6 +125,41 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--i
 .ci-v a{color:#fff;text-decoration:none;}
 .site-footer{background:#070f0a;padding:18px 48px;text-align:center;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:1px;}
 
+
+/* ── SEARCH ── */
+.search-wrap{width:100%;max-width:500px;position:relative;margin-top:2px;}
+.search-bar{width:100%;display:flex;align-items:center;gap:0;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);border-radius:50px;overflow:hidden;transition:border-color .2s,background .2s;}
+.search-bar:focus-within{background:rgba(255,255,255,0.18);border-color:rgba(125,232,160,0.6);}
+.search-icon{padding:0 14px;color:rgba(255,255,255,0.55);font-size:15px;flex-shrink:0;}
+.search-input{flex:1;background:none;border:none;outline:none;font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#fff;padding:9px 0;}
+.search-input::placeholder{color:rgba(255,255,255,0.45);}
+.search-clear{padding:0 14px;color:rgba(255,255,255,0.4);cursor:pointer;font-size:16px;display:none;background:none;border:none;line-height:1;}
+.search-clear.visible{display:flex;align-items:center;}
+
+/* 검색 결과 드롭다운 */
+.search-results{position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.25);z-index:999;max-height:420px;overflow-y:auto;display:none;border:1px solid rgba(0,0,0,0.08);}
+.search-results.open{display:block;}
+.sr-header{padding:10px 16px 6px;font-size:10px;font-weight:800;color:var(--sage);letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--line);}
+.sr-item{display:flex;align-items:center;gap:12px;padding:11px 16px;text-decoration:none;transition:background .15s;border-bottom:1px solid rgba(0,0,0,0.04);}
+.sr-item:last-child{border-bottom:none;}
+.sr-item:hover{background:var(--cream);}
+.sr-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.sr-body{flex:1;min-width:0;}
+.sr-name{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:2px;}
+.sr-name mark{background:rgba(200,150,10,0.2);color:var(--gold);border-radius:2px;padding:0 2px;}
+.sr-desc{font-size:11px;color:var(--sage);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sr-cat{font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;background:var(--cream);color:var(--sage);flex-shrink:0;}
+.sr-empty{padding:20px 16px;text-align:center;color:var(--sage);font-size:13px;}
+.sr-empty span{font-size:24px;display:block;margin-bottom:6px;}
+
+@media(max-width:768px){
+  .search-wrap{max-width:100%;}
+  .search-input{font-size:12px;}
+}
+@media(max-width:480px){
+  .search-wrap{max-width:100%;}
+}
+
 /* ── ARROW SVG shorthand ── */
 .arr-svg{display:inline-block;}
 
@@ -237,6 +272,14 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--i
       <span class="hc-item"><span class="hc-icon">📞</span> 010-5269-1459</span>
       <span class="hc-sep">|</span>
       <span class="hc-item"><span class="hc-icon">✉️</span> <a href="mailto:h2691459@naver.com">h2691459@naver.com</a></span>
+    </div>
+    <div class="search-wrap">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input class="search-input" type="text" placeholder="제품명·증상·키워드로 검색 (예: 마블링, 산증, 곰팡이...)" id="searchInput" autocomplete="off">
+        <button class="search-clear" id="searchClear">✕</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
     </div>
   </div>
 </header>
@@ -498,7 +541,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--i
       <div class="card-footer"><span class="card-action">자세히 보기 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg></span></div>
     </a>
 
-    <a class="product-card" href="yea-sacc.html" style="--card-accent:var(--c-gut)" data-species="cattle pig poultry">
+    <a class="product-card" href="lintex.html" style="--card-accent:var(--c-gut)" data-species="cattle pig poultry">
       <div class="card-swatch" style="background:linear-gradient(90deg,#2a1808,#7a4018)"></div>
       <div class="card-body">
         <div class="species-tags"><span class="sp-tag sp-cattle">🐄 축우</span><span class="sp-tag sp-pig">🐷 양돈</span><span class="sp-tag sp-poultry">🐔 양계·오리</span></div>
@@ -802,5 +845,164 @@ window.addEventListener('load', () => {
   });
 });
 </script>
+
+<script>
+// ── 제품 검색 데이터베이스 ──
+const PRODUCTS = [
+  // 고급육 및 생산성 향상
+  { name:'루멘패스 MET', nameEn:'Rumenpass Methionine · DL-Met 60%', cat:'고급육·생산성', color:'#8a3010', href:'rumenpass-methionine.html',
+    tags:'메티오닌 단백질 절감 마블링 등심 FCR 증체 도체 사료비절감 질소배출 낙농' },
+  { name:'루멘패스 라이신', nameEn:'Rumenpass Lysine · L-Lysine HCl', cat:'고급육·생산성', color:'#0a7888', href:'rumenpass-lysine.html',
+    tags:'라이신 소장흡수 근내지방 유량 유성분 고급육 사료효율' },
+  { name:'투뿔한우', nameEn:'Two Bull Hanwoo', cat:'고급육·생산성', color:'#8a3010', href:'twobull-hanwoo.html',
+    tags:'마블링 등심단면적 1++ 출하 항산화 스트레스 유기태 비타민C' },
+  { name:'에너지 플러스', nameEn:'Excential Energy Plus', cat:'고급육·생산성', color:'#1a6090', href:'energy-plus.html',
+    tags:'유화제 지방소화 증체량 사료효율 장건강 계란품질 전축종' },
+  { name:'루멘패스 콜린', nameEn:'Rumenpass Choline', cat:'고급육·생산성', color:'#6a3080', href:'rumenpass-choline.html',
+    tags:'콜린 간기능 체세포 산유량 분만 지방간 케토시스 낙농' },
+  { name:'루멘패스 비타민 AD3E', nameEn:'Rumenpass Vit AD3E', cat:'미네랄·비타민', color:'#1a5898', href:'rumenpass-vitamin-ad3e.html',
+    tags:'비타민A D3 E 코팅 반추위보호 소장흡수 면역 번식 성장 착유우 송아지' },
+  { name:'프로서플', nameEn:'Prosurple · Fermented Soybean', cat:'고급육·생산성', color:'#0a8888', href:'prosurple.html',
+    tags:'발효대두박 단백질 항영양인자 바이패스 기호성 반추위 조기발달 질병저항' },
+  { name:'하이앤드 프로서플', nameEn:'High-End Prosurple', cat:'고급육·생산성', color:'#6840a0', href:'highend-prosurple.html',
+    tags:'발효대두박 NSP효소 조단백 펩타이드 항산화 항염증 소화 양돈' },
+  { name:'이섹 YEA-SACC', nameEn:'Yea-Sacc · 활성효모', cat:'고급육·생산성', color:'#4a7020', href:'yea-sacc.html',
+    tags:'활성효모 소화율 BMS 등심단면적 반추위 혐기성균 산란율 육계 성장 A5' },
+  { name:'린텍스', nameEn:'LIN TEX · 오메가3', cat:'고급육·생산성', color:'#8a5010', href:'lintex.html',
+    tags:'오메가3 아마종실 번식 등심 근내지방 체세포 항염증 CLA 산패 양돈 양계' },
+  { name:'한우 번식 플러스', nameEn:'Hanwoo Breed Plus', cat:'고급육·생산성', color:'#b84020', href:'hanwoo-breed-plus.html',
+    tags:'번식 베타카로틴 비타민E 유기태미네랄 번식우 수태율' },
+  // 장건강
+  { name:'루프로민 밸런스', nameEn:'Rupromin Balance', cat:'장건강', color:'#1a6038', href:'rupromin-balance.html',
+    tags:'중조 완충 산증 산독증 입닫음 식체 반추위pH 섭취량 산유량 유지방' },
+  { name:'프리이스트자임 FB', nameEn:'Pre-Yeastzyme FB', cat:'장건강', color:'#1a7038', href:'pre-yeastzyme.html',
+    tags:'NSP효소 분변스코어 유익균 단백질소화 볏짚 팜박 DDGS 조달청' },
+  { name:'효소제 시리즈', nameEn:'NSP Enzyme & Phytase', cat:'장건강', color:'#c89010', href:'enzyme-series.html',
+    tags:'아밀라제 만나아제 자이라나제 피타제 셀룰라제 프로테아제 항생제대체 인흡수' },
+  { name:'GOD (글루코옥시데이즈)', nameEn:'Glucose Oxidase', cat:'장건강', color:'#c05818', href:'god-glucose-oxidase.html',
+    tags:'장건강 항균 항톡신 곰팡이독소 아플라톡신 항생제대체 설사 면역 양돈 양계' },
+  { name:'피타아제', nameEn:'Thermostable Phytase', cat:'장건강', color:'#1a5888', href:'thermostable-phytase.html',
+    tags:'피타아제 피틴산 인흡수 무기태인 사료비절감 내열성 육계 양돈 오리 산란계 뼈강도' },
+  // 고온스트레스·비타민·미네랄
+  { name:'시원해 1호', nameEn:'Heat Stress Solution Stage 1', cat:'고온스트레스', color:'#0a6898', href:'cool-1.html',
+    tags:'고온 열스트레스 전해질 Na K Mg 산증 수분균형 THI 72 한우 젖소' },
+  { name:'시원해 2호', nameEn:'Heat Stress Solution Stage 2', cat:'고온스트레스', color:'#c05010', href:'cool-2.html',
+    tags:'고온 열스트레스 유기태미네랄 비타민E C 비테인 면역 번식 THI 80 한우 젖소' },
+  { name:'비타올큐', nameEn:'Vita All Q', cat:'미네랄·비타민', color:'#2060a8', href:'vita-allq.html',
+    tags:'비타민A D3 E 고함량 복합 전구간 면역 성장 번식 낙농 한우' },
+  { name:'미네랄올큐 골드', nameEn:'Mineral AllQ Gold', cat:'미네랄·비타민', color:'#c89010', href:'mineral-allq-gold.html',
+    tags:'미네랄 비타민 고함량 전구간 번식성적 성장촉진 한우 낙농' },
+  { name:'미네랄올큐', nameEn:'Mineral All Q', cat:'미네랄·비타민', color:'#a07010', href:'mineral-allq.html',
+    tags:'미네랄 비타민E 철 구리 아연 망간 올인원 기초영양 번식 성장 체세포' },
+  // 항곰팡이·항톡신
+  { name:'마이코펑 Micofung®', nameEn:'Anti-Fungal Feed Preservative', cat:'항곰팡이·항톡신', color:'#1a7a2a', href:'micofung.html',
+    tags:'항곰팡이 마이코톡신 감귤추출물 유기산 사료보존 장기지속 설비부식 프로피온산' },
+  { name:'톡시덱스 프리머스', nameEn:'Toxidex Primus', cat:'항곰팡이·항톡신', color:'#5a3890', href:'toxidex-primus.html',
+    tags:'마이코톡신 흡착 DON ZEN 아플라톡신 간보호 해독 면역증강 FCR 자돈 육계' },
+  // 발효촉진제
+  { name:'AMARIL (아마릴)', nameEn:'Natural Phytogenic Feed Additive', cat:'발효촉진제', color:'#c89010', href:'amaril.html',
+    tags:'계피추출물 신남알데하이드 항균 항산화 소화활성 항생제대체 자돈 육계 산란계' },
+  { name:'건조당밀', nameEn:'Sweet Dried Molasses', cat:'발효촉진제', color:'#7a5010', href:'dried-molasses.html',
+    tags:'당밀 발효촉진 기호성 사일리지 에너지 미네랄 탑드레싱 조사료 양돈 육계' },
+  { name:'CSL POWDER', nameEn:'Corn Steep Liquor Powder', cat:'발효촉진제', color:'#2878b8', href:'csl-powder.html',
+    tags:'옥수수침지 단백질 아미노산 발효배지 유산균 기호성 소화 면역 발효사료' },
+  { name:'천연부숙제 FB', nameEn:'Natural Composting Aid', cat:'발효촉진제', color:'#5a7a5a', href:'natural-composting.html',
+    tags:'부숙제 악취 질소 암모니아 분변 발효 축사환경 한우 젖소 양돈 양계 오리' },
+];
+
+// 검색 함수
+function searchProducts(query) {
+  if (!query || query.trim().length < 1) return [];
+  const q = query.trim().toLowerCase();
+  const results = [];
+  PRODUCTS.forEach(p => {
+    const searchStr = (p.name + ' ' + p.nameEn + ' ' + p.tags + ' ' + p.cat).toLowerCase();
+    if (searchStr.includes(q)) {
+      // 점수 계산 (이름 일치가 높은 점수)
+      let score = 0;
+      if (p.name.toLowerCase().includes(q)) score += 10;
+      if (p.nameEn.toLowerCase().includes(q)) score += 5;
+      if (p.tags.toLowerCase().includes(q)) score += 2;
+      results.push({ ...p, score });
+    }
+  });
+  return results.sort((a,b) => b.score - a.score).slice(0, 8);
+}
+
+function highlight(text, query) {
+  if (!query) return text;
+  const re = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+  return text.replace(re, '<mark>$1</mark>');
+}
+
+// DOM
+const input = document.getElementById('searchInput');
+const results = document.getElementById('searchResults');
+const clearBtn = document.getElementById('searchClear');
+
+function renderResults(query) {
+  const items = searchProducts(query);
+  results.innerHTML = '';
+  if (!query.trim()) { results.classList.remove('open'); return; }
+
+  results.classList.add('open');
+  if (items.length === 0) {
+    results.innerHTML = '<div class="sr-empty"><span>🔍</span>검색 결과가 없습니다.<br><small style="color:#aaa;font-size:11px;">다른 키워드로 검색해 보세요 (예: 장건강, 번식, 고온, 마블링)</small></div>';
+    return;
+  }
+
+  const header = document.createElement('div');
+  header.className = 'sr-header';
+  header.textContent = `검색 결과 ${items.length}개`;
+  results.appendChild(header);
+
+  items.forEach(item => {
+    const a = document.createElement('a');
+    a.className = 'sr-item';
+    a.href = item.href;
+    a.innerHTML = `
+      <div class="sr-dot" style="background:${item.color}"></div>
+      <div class="sr-body">
+        <div class="sr-name">${highlight(item.name, query)}</div>
+        <div class="sr-desc">${item.nameEn}</div>
+      </div>
+      <span class="sr-cat">${item.cat}</span>
+    `;
+    results.appendChild(a);
+  });
+}
+
+input.addEventListener('input', e => {
+  const q = e.target.value;
+  renderResults(q);
+  clearBtn.classList.toggle('visible', q.length > 0);
+});
+
+clearBtn.addEventListener('click', () => {
+  input.value = '';
+  results.classList.remove('open');
+  clearBtn.classList.remove('visible');
+  input.focus();
+});
+
+// 외부 클릭 시 닫기
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-wrap')) {
+    results.classList.remove('open');
+  }
+});
+input.addEventListener('focus', () => {
+  if (input.value.trim()) results.classList.add('open');
+});
+
+// Enter 키 → 첫번째 결과로 이동
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const first = results.querySelector('.sr-item');
+    if (first) window.location.href = first.href;
+  }
+});
+</script>
+
 </body>
 </html>
