@@ -6,231 +6,276 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fntbio-co.github.io/fnt_bio/lintex.html">
 <meta property="og:title" content="린텍스 (LIN TEX) — 에프앤티바이오">
-<meta property="og:description" content="오메가-3가 풍부한 고품질 사료 첨가제 | 번식성적·생산성 향상 | 에프앤티바이오 010-5269-1459">
+<meta property="og:description" content="오메가-3 아마종실 기반 고품질 기능성 사료 | 에프앤티바이오">
 <meta property="og:image" content="https://fntbio-co.github.io/fnt_bio/og-image.png">
 <meta property="og:site_name" content="에프앤티바이오">
 <title>린텍스 (LIN TEX) — 에프앤티바이오</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --olive:#4a7010;--olive-mid:#6a9828;--olive-light:#e8f4d0;--olive-pale:#f5fae8;
-  --amber:#c07810;--amber-light:#fdf5d8;
-  --dark:#181808;--gray:#4a5830;--gl:#d8e8b8;--white:#fff;--cream:#f8fdf0;
+  --accent:#1a2808;--accent-mid:#4a7010;--accent-light:#e8f4d0;--accent-pale:#f5fae8;
+  --dark-bg:#0d1604;--gold:#c89010;--gold-mid:#e8b820;
+  --dark:#0d1a14;--gray:#4a5a4a;--line:#d8e8d0;--white:#fff;--cream:#f8fdf8;--text:#1a2a1a;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Noto Sans KR',sans-serif;background:#a8b888;display:flex;justify-content:center;padding:40px 20px;}
-.flyer{width:794px;background:var(--cream);overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,0.28);}
-
-.back-to-catalog{position:fixed;top:16px;left:16px;z-index:9999;background:rgba(24,24,8,0.88);color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;padding:9px 18px;border-radius:50px;text-decoration:none;display:flex;align-items:center;gap:7px;box-shadow:0 4px 18px rgba(0,0,0,0.28);transition:background 0.2s;backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.15);}
-.back-to-catalog:hover{background:rgba(10,100,80,0.95);}
-
-.hero{background:linear-gradient(135deg,#181808 0%,#4a7010 50%,#8ab828 100%);position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.05);}
-.htop{display:flex;justify-content:space-between;align-items:center;padding:11px 36px;border-bottom:1px solid rgba(255,255,255,0.1);position:relative;z-index:2;}
-.hbadge{background:var(--amber);color:#fff;font-size:10px;font-weight:800;padding:3px 12px;border-radius:2px;letter-spacing:.8px;}
-.hco{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1px;}
-.hbody{display:flex;min-height:210px;position:relative;z-index:2;}
-.hleft{flex:1;padding:30px 36px 34px;}
-.h-badge-top{display:inline-block;background:rgba(200,240,100,0.2);border:1px solid rgba(200,240,100,0.4);color:#c8f060;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px;}
-.hname{font-size:52px;font-weight:900;color:#fff;line-height:1;letter-spacing:-1.5px;margin-bottom:4px;}
-.hname em{color:#c8f060;font-style:normal;}
-.hsub{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:14px;}
-.h-tagline{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.65;border-left:4px solid #c8f060;padding-left:14px;margin-bottom:18px;}
-.h-tagline strong{color:#c8f060;}
-.hpills{display:flex;gap:7px;flex-wrap:wrap;}
-.hpill{background:rgba(200,240,96,0.12);border:1px solid rgba(200,240,96,0.35);color:#c8f060;font-size:11px;font-weight:700;padding:5px 13px;border-radius:20px;}
-.hright{width:195px;flex-shrink:0;border-left:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px 18px;}
-.orb{width:130px;height:130px;border-radius:50%;background:radial-gradient(circle at 38% 35%,#e0f880 0%,#6a9828 45%,#181808 100%);border:3px solid rgba(200,240,96,0.4);display:flex;align-items:center;justify-content:center;font-size:46px;box-shadow:0 10px 32px rgba(0,0,0,0.35);}
-.orl{text-align:center;}
-.orlm{font-size:12px;font-weight:800;color:#c8f060;letter-spacing:.5px;}
-.orls{font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:1px;margin-top:2px;}
-
-/* SPEC STRIP */
-.spec-strip{background:#1a3008;display:flex;}
-.ss-item{flex:1;padding:14px 12px;text-align:center;border-right:1px solid rgba(255,255,255,0.1);}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--text);line-height:1.6;}
+.back-btn{position:fixed;top:16px;left:16px;z-index:999;background:rgba(13,26,20,0.88);color:#fff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:50px;text-decoration:none;display:flex;align-items:center;gap:8px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:background .2s;}
+.back-btn:hover{background:rgba(10,100,80,0.92);}
+.hero{background:linear-gradient(150deg,#0d1604 0%,#1a2808 50%,#4a7010 100%);padding:100px 24px 52px;position:relative;overflow:hidden;text-align:center;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,200,100,0.15) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold) 0%,#f0e060 50%,var(--gold) 100%);}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.9);font-size:12px;font-weight:700;padding:5px 16px;border-radius:50px;letter-spacing:1px;margin-bottom:20px;}
+.hero-icon{font-size:72px;margin-bottom:16px;display:block;}
+.hero-name{font-family:'Montserrat',sans-serif;font-size:56px;font-weight:900;color:#fff;letter-spacing:-2px;line-height:1.1;margin-bottom:8px;}
+.hname-em{color:#f0d060;font-style:normal;}
+.gold-em{color:#f0d060;font-style:normal;}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-bottom:24px;}
+.hero-tagline{font-size:17px;color:rgba(255,255,255,0.88);line-height:1.75;max-width:560px;margin:0 auto 28px;border-left:4px solid #f0d060;text-align:left;padding-left:18px;}
+.hero-tagline strong{color:#f0d060;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.hero-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:13px;font-weight:700;padding:7px 18px;border-radius:50px;}
+.summary-strip{background:var(--dark-bg);display:grid;grid-template-columns:repeat(4,1fr);}
+.ss-item{padding:22px 12px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);}
 .ss-item:last-child{border-right:none;}
-.ss-label{font-size:10px;color:rgba(255,255,255,0.5);margin-bottom:4px;font-weight:600;}
-.ss-val{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:#c8f060;}
-.ss-unit{font-size:10px;color:rgba(255,255,255,0.5);}
-
-.sec-eye{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
-.sec-tag{background:var(--dark);color:#c8f060;font-size:9px;font-weight:800;padding:4px 13px;letter-spacing:2px;text-transform:uppercase;border-radius:2px;}
-.sec-line{flex:1;height:1px;background:var(--gl);}
-
-/* FEATURES */
-.feat-sec{background:var(--white);padding:28px 36px;}
-.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.feat-card{background:var(--olive-pale);border:1px solid var(--gl);padding:18px 18px;border-radius:6px;display:flex;gap:12px;align-items:flex-start;border-left:4px solid var(--olive-mid);}
-.fc-num{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:rgba(106,152,40,0.18);flex-shrink:0;line-height:1;margin-top:2px;}
-.fc-title{font-size:13.5px;font-weight:800;color:var(--olive);margin-bottom:6px;}
-.fc-desc{font-size:12px;color:var(--gray);line-height:1.65;}
-.fc-desc em{color:var(--olive-mid);font-style:normal;font-weight:700;}
-
-/* EFFECTS */
-.eff-sec{background:var(--olive-pale);padding:26px 36px;border-top:3px solid var(--olive-mid);}
-.eff-sec .sec-tag{background:var(--olive);color:#fff;}
-.eff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px;}
-.eff-card{background:var(--white);border:1px solid var(--gl);padding:14px 14px;border-radius:6px;text-align:center;}
-.ec-ico{font-size:24px;margin-bottom:7px;}
-.ec-title{font-size:12.5px;font-weight:800;color:var(--olive);margin-bottom:5px;}
-.ec-desc{font-size:11.5px;color:var(--gray);line-height:1.55;}
-
-/* DOSAGE */
-.dose-sec{background:var(--dark);padding:26px 36px;}
-.dose-sec .sec-tag{background:var(--olive-mid);color:var(--dark);}
-.dose-sec .sec-line{background:rgba(255,255,255,0.1);}
-.dose-table{width:100%;border-collapse:collapse;margin-top:16px;}
-.dose-table th{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);font-size:11px;font-weight:700;padding:9px 14px;text-align:center;}
-.dose-table th:first-child{text-align:left;}
-.dose-table td{padding:9px 14px;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,0.08);text-align:center;color:rgba(255,255,255,0.8);}
-.dose-table td:first-child{text-align:left;font-weight:700;color:#fff;}
-.dose-table td.amt{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#c8f060;}
-.dose-table tr:last-child td{border-bottom:none;}
-
-/* FOOTER */
-.footer{background:#0a0f05;display:flex;overflow:hidden;}
-.ftl{flex:1;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px;}
-.ft-lbl{font-size:10px;font-weight:700;color:#c8f060;letter-spacing:2px;text-transform:uppercase;}
-.ft-main{font-size:14px;font-weight:900;color:#fff;line-height:1.4;}
-.ft-cons{display:flex;gap:18px;margin-top:8px;}
-.fc{display:flex;flex-direction:column;gap:2px;}
-.fcl{font-size:8px;font-weight:700;letter-spacing:1.5px;color:#c8f060;text-transform:uppercase;}
-.fcv{font-size:11px;color:rgba(255,255,255,0.7);line-height:1.5;}
-.ftr{width:175px;flex-shrink:0;background:var(--olive-mid);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 14px;text-align:center;gap:3px;}
-.ftr-co{font-size:11px;color:rgba(255,255,255,0.65);}
-.ftr-main{font-size:18px;font-weight:900;color:#fff;line-height:1.1;}
-.ftr-tel{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#ffe060;margin-top:3px;}
-
-@media(max-width:768px){body{padding:20px 12px;}.flyer{width:100%;}
-.hbody{flex-direction:column;}.hleft{padding:22px 20px 20px;}.hname{font-size:36px!important;}
-.hright{width:100%!important;border-left:none!important;border-top:1px solid rgba(255,255,255,0.1);flex-direction:row;padding:16px 20px;gap:16px;justify-content:center;}
-.feat-grid,.eff-grid{grid-template-columns:1fr!important;}
-.feat-sec,.eff-sec,.dose-sec{padding:20px 16px!important;}
-.ss-item{padding:10px 8px;}
-.htop{padding:8px 16px!important;flex-wrap:wrap;}
-.footer{flex-direction:column!important;}.ftl{padding:18px 16px!important;}.ft-cons{flex-direction:column!important;gap:10px!important;}.ftr{width:100%!important;padding:16px!important;}
-.back-to-catalog{top:10px;left:10px;font-size:12px;padding:7px 14px;}}
+.ss-icon{font-size:30px;margin-bottom:8px;}
+.ss-title{font-size:15px;font-weight:800;color:#f0d060;margin-bottom:4px;}
+.ss-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.4;}
+.section{padding:52px 24px;border-bottom:1px solid var(--line);}
+.section-label{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--accent-mid);margin-bottom:8px;}
+.section-title{font-size:28px;font-weight:900;color:var(--dark);line-height:1.3;margin-bottom:10px;letter-spacing:-.5px;}
+.section-title em{color:var(--accent-mid);font-style:normal;}
+.section-desc{font-size:16px;color:var(--gray);line-height:1.8;margin-bottom:36px;max-width:640px;}
+/* feature cards */
+.feat-grid{display:flex;flex-direction:column;gap:20px;}
+.feat-card{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 3px 16px rgba(0,0,0,0.07);}
+.feat-head{display:flex;align-items:center;gap:16px;padding:20px 24px;background:var(--accent-pale);}
+.feat-icon{font-size:38px;}
+.feat-num{font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:3px;}
+.feat-name{font-size:20px;font-weight:900;color:var(--dark);margin-bottom:2px;}
+.feat-sub{font-size:13px;color:var(--gray);}
+.feat-body{background:var(--white);padding:24px;}
+.feat-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.feat-list li{display:flex;align-items:flex-start;gap:8px;font-size:15px;color:var(--text);line-height:1.5;}
+.feat-list li::before{content:'→';color:var(--ac,var(--accent-mid));font-weight:900;flex-shrink:0;}
+/* simple cards */
+.simple-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.simple-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px 22px;box-shadow:0 2px 10px rgba(0,0,0,0.05);}
+.sc-icon{font-size:40px;margin-bottom:12px;}
+.sc-title{font-size:19px;font-weight:900;margin-bottom:8px;}
+.sc-desc{font-size:15px;color:var(--gray);line-height:1.7;margin-bottom:10px;}
+.sc-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.sc-list li{font-size:14px;color:var(--gray);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.sc-list li::before{content:'•';color:var(--ac,var(--accent-mid));font-size:18px;flex-shrink:0;}
+/* mech */
+.mech-cards{display:flex;flex-direction:column;gap:16px;margin-bottom:24px;}
+.mech-card{background:var(--white);border-radius:14px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+.mech-badge{display:inline-block;font-size:11px;font-weight:800;padding:4px 14px;border-radius:50px;margin-bottom:12px;letter-spacing:.5px;}
+.mech-name{font-size:19px;font-weight:900;color:var(--dark);margin-bottom:10px;line-height:1.4;}
+.mech-desc{font-size:15px;color:var(--gray);line-height:1.8;}
+.mech-desc em{color:var(--accent-mid);font-style:normal;font-weight:700;}
+.effect-box{background:var(--dark-bg);border-radius:14px;padding:30px 28px;}
+.effect-box-title{font-size:15px;font-weight:800;color:#f0d060;letter-spacing:1px;margin-bottom:18px;}
+.effect-list{display:flex;flex-direction:column;gap:12px;}
+.effect-item{display:flex;align-items:flex-start;gap:10px;font-size:16px;color:rgba(255,255,255,0.82);line-height:1.6;}
+.effect-item::before{content:'✓';color:#f0d060;font-weight:900;flex-shrink:0;font-size:18px;margin-top:1px;}
+/* table */
+.table-wrap{overflow-x:auto;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+.data-table{width:100%;border-collapse:collapse;}
+.data-table th{background:var(--accent);color:#fff;font-size:14px;font-weight:700;padding:14px 16px;text-align:center;}
+.data-table th:first-child{text-align:left;}
+.data-table td{padding:13px 16px;font-size:14px;border-bottom:1px solid var(--line);text-align:center;color:var(--text);}
+.data-table td:first-child{font-weight:700;text-align:left;background:var(--accent-pale);}
+.data-table td.highlight{font-weight:800;color:var(--accent-mid);background:var(--accent-light);}
+.data-table tr:last-child td{border-bottom:none;}
+/* info grid */
+.info-grid{display:flex;flex-direction:column;gap:16px;}
+.info-item{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px 20px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.info-icon{font-size:36px;flex-shrink:0;}
+.info-title{font-size:18px;font-weight:800;color:var(--dark);margin-bottom:6px;}
+.info-desc{font-size:15px;color:var(--gray);line-height:1.75;}
+/* dosage */
+.dosage-section{background:var(--dark-bg);}
+.dosage-section .section-label{color:#f0d060;}
+.dosage-section .section-title{color:#fff;}
+.dose-cards{display:flex;flex-direction:column;gap:14px;}
+.dose-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.dose-animal{font-size:18px;font-weight:800;color:#fff;margin-bottom:5px;}
+.dose-method{font-size:13px;color:rgba(255,255,255,0.5);}
+.dose-right{text-align:right;flex-shrink:0;}
+.dose-amount{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:#f0d060;}
+.dose-unit{font-size:12px;color:rgba(255,255,255,0.4);margin-top:2px;}
+.dose-note{margin-top:22px;background:rgba(240,208,96,0.1);border:1px solid rgba(240,208,96,0.25);border-radius:12px;padding:18px 22px;font-size:15px;color:rgba(255,255,255,0.72);line-height:1.75;}
+.dose-note strong{color:#f0d060;}
+/* footer */
+.footer-cta{background:var(--accent-mid);padding:44px 24px;text-align:center;}
+.footer-cta-title{font-size:24px;font-weight:900;color:#fff;margin-bottom:8px;}
+.footer-cta-sub{font-size:15px;color:rgba(255,255,255,0.78);margin-bottom:22px;}
+.footer-cta-tel{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900;color:#fff;display:block;margin-bottom:8px;text-decoration:none;}
+.footer-info{background:var(--dark-bg);padding:26px 24px;text-align:center;}
+.footer-info p{font-size:13px;color:rgba(255,255,255,0.42);line-height:1.9;}
+.footer-info strong{color:rgba(255,255,255,0.65);}
+@media(min-width:640px){
+  .hero{padding:110px 56px 60px;}
+  .hero-name{font-size:72px;}
+  .section{padding:64px 56px;}
+  .section-title{font-size:32px;}
+  .mech-cards{display:grid;grid-template-columns:1fr 1fr;}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .hero-name{font-size:40px;}
+  .hero-tagline{font-size:15px;}
+  .hero-pill{font-size:12px;padding:6px 12px;}
+  .summary-strip{grid-template-columns:repeat(2,1fr);}
+  .ss-item:nth-child(2){border-right:none;}
+  .ss-item:nth-child(3),.ss-item:nth-child(4){border-top:1px solid rgba(255,255,255,0.08);}
+  .section-title{font-size:22px;}
+  .section-desc{font-size:14px;}
+  .feat-list{grid-template-columns:1fr;}
+  .simple-grid{grid-template-columns:1fr;}
+  .dose-card{flex-direction:column;align-items:flex-start;}
+  .dose-right{text-align:left;}
+  .dose-amount{font-size:32px;}
+  .footer-cta-tel{font-size:28px;}
+}
 </style>
 </head>
 <body>
-<a class="back-to-catalog" href="https://fntbio-co.github.io/fnt_bio/index.html">← 카탈로그로 돌아가기</a>
+<a class="back-btn" href="https://fntbio-co.github.io/fnt_bio/index.html">← 카탈로그로 돌아가기</a>
 
-<div class="flyer">
-<div class="hero">
-  <div class="htop">
-    <span class="hbadge">판매원 · 주식회사 에프앤티바이오</span>
-    <span class="hco">서울 송파구 올림픽로 336, 2107호</span>
-  </div>
-  <div class="hbody">
-    <div class="hleft">
-      <p class="h-badge-top">오메가-3가 풍부한 고품질 첨가제</p>
-      <h1 class="hname">린텍스 <em>(LIN TEX)</em></h1>
-      <p class="hsub">Extrusion 가공 아마종실 기반 오메가-3 공급 기능성 사료</p>
-      <div class="h-tagline">
-        익스트루전(Extrusion)한 아마종실을 주원료로 사용한 <strong>오메가-3 공급용 기능성 사료</strong>.<br>
-        기존 오메가-3 공급사료의 단점인 산패·독소·어취를 해결하고 <strong>가격대 성능비 우수</strong>.
-      </div>
-      <div class="hpills">
-        <span class="hpill">풍부한 오메가-3</span>
-        <span class="hpill">독소 제거 (익스트루전)</span>
-        <span class="hpill">산패 방지 (3중 코팅)</span>
-        <span class="hpill">면역력 개선</span>
-        <span class="hpill">축·양돈·양계 적용</span>
-      </div>
-    </div>
-    <div class="hright">
-      <div class="orb">🌱</div>
-      <div class="orl">
-        <p class="orlm">LIN TEX</p>
-        <p class="orls">Omega-3 Feed Additive</p>
-      </div>
-    </div>
-  </div>
-</div>
+<section class="hero">
+  <span class="hero-badge">오메가-3가 풍부한 고품질 기능성 사료 첨가제 · 판매원: 주식회사 에프앤티바이오</span>
+  <span class="hero-icon">🌱</span>
+  <h1 class="hero-name"><em class="hname-em">린텍스</em>린텍스 (LIN TEX)</h1>
+  <p class="hero-sub">LIN TEX · Extrusion 가공 아마종실 · 오메가-3 8~17%</p>
+  <div class="hero-tagline">Extrusion 가공 아마종실 기반 <strong>오메가-3 공급 기능성 사료</strong>.
+기존 제품의 단점(산패·독소·어취)을 <strong>3중 코팅과 익스트루전으로 완전 해결</strong>.</div>
+  <div class="hero-pills"><span class="hero-pill">🌱 아마종실 오메가-3</span><span class="hero-pill">⚙️ 익스트루전 가공</span><span class="hero-pill">🔒 3중 산패 방지</span><span class="hero-pill">🐟 어취 없음</span><span class="hero-pill">🌸 번식 성적</span><span class="hero-pill">💪 체세포수↓</span></div>
+</section>
 
-<div class="spec-strip">
-  <div class="ss-item"><p class="ss-label">조단백질</p><p class="ss-val">20%+</p><p class="ss-unit">이상</p></div>
-  <div class="ss-item"><p class="ss-label">조지방</p><p class="ss-val">23%+</p><p class="ss-unit">이상</p></div>
-  <div class="ss-item"><p class="ss-label">오메가-3 함량</p><p class="ss-val">8~17%</p><p class="ss-unit">중량 기준</p></div>
-  <div class="ss-item"><p class="ss-label">가공 방식</p><p class="ss-val">Extrusion</p><p class="ss-unit">고온·고압 가공</p></div>
-</div>
+<div class="summary-strip"><div class="ss-item">
+    <div class="ss-icon">🌱</div>
+    <p class="ss-title">오메가-3 8~17%</p>
+    <p class="ss-desc">아마종실 기반</p>
+  </div><div class="ss-item">
+    <div class="ss-icon">⚙️</div>
+    <p class="ss-title">익스트루전</p>
+    <p class="ss-desc">독소·어취 제거</p>
+  </div><div class="ss-item">
+    <div class="ss-icon">🔒</div>
+    <p class="ss-title">3중 코팅</p>
+    <p class="ss-desc">산패 완전 방지</p>
+  </div><div class="ss-item">
+    <div class="ss-icon">🌸</div>
+    <p class="ss-title">번식·체세포</p>
+    <p class="ss-desc">동시 개선</p>
+  </div></div>
 
-<div class="feat-sec">
-  <div class="sec-eye"><span class="sec-tag">핵심 특장점</span><div class="sec-line"></div></div>
-  <div class="feat-grid">
-    <div class="feat-card">
-      <div class="fc-num">01</div>
-      <div>
-        <p class="fc-title">풍부한 오메가-3</p>
-        <p class="fc-desc">오메가-3가 가장 풍부한 <em>아마종실 사용</em>. 기호성·축산물 냄새 우수. 중량당 오메가-3 함량 8~17%.</p>
-      </div>
-    </div>
-    <div class="feat-card">
-      <div class="fc-num">02</div>
-      <div>
-        <p class="fc-title">독소 제거 (익스트루전 가공)</p>
-        <p class="fc-desc">고온·고압 익스트루전 공정으로 <em>시안화 화합물 파괴</em>. 안전한 오메가-3 공급 실현.</p>
-      </div>
-    </div>
-    <div class="feat-card">
-      <div class="fc-num">03</div>
-      <div>
-        <p class="fc-title">산패 방지 — 3중 코팅</p>
-        <p class="fc-desc">전분 원료+익스트루전 코팅(1차), <em>비타민E 항산화제(2차)</em>, 밀봉포장(3차)으로 산패를 철저히 방지.</p>
-      </div>
-    </div>
-    <div class="feat-card">
-      <div class="fc-num">04</div>
-      <div>
-        <p class="fc-title">생산성 향상 · 면역력 강화</p>
-        <p class="fc-desc">동물에 에너지 추가 공급으로 생산성 향상. <em>유익미생물과 오메가-3 시너지</em>로 밀사·분변악취·스트레스 감소.</p>
-      </div>
-    </div>
+<section class="section" style="background:var(--white)">
+  <p class="section-label">Unique Technology</p>
+  <h2 class="section-title">린텍스만의 <em>3가지 혁신 기술</em></h2>
+  <p class='section-desc'>기존 오메가-3 사료의 문제점인 산패·독소·어취를 3가지 기술로 완전히 해결합니다.</p><div class="mech-cards"><div class="mech-card" style="border-left:5px solid #4a7010">
+      <span class="mech-badge" style="background:var(--accent-light);color:var(--accent-mid)">익스트루전 가공</span>
+      <p class="mech-name">고온·고압으로 시안화 화합물 파괴 + 독소 제거</p>
+      <p class="mech-desc">아마종실의 천연 독소인 <em>시안화 화합물을 익스트루전(고온·고압 가공)으로 완전히 파괴</em>합니다. 동시에 세포벽을 파괴하여 오메가-3 지방산의 이용률을 높입니다.</p>
+    </div><div class="mech-card" style="border-left:5px solid #4a7010">
+      <span class="mech-badge" style="background:var(--accent-light);color:var(--accent-mid)">3중 산패 방지</span>
+      <p class="mech-name">전분 코팅(1차) + 비타민E 항산화(2차) + 밀봉포장(3차)</p>
+      <p class="mech-desc">오메가-3의 최대 약점인 산패를 <em>3단계로 완벽하게 차단</em>합니다. 전분 원료+익스트루전 코팅, 비타민E 항산화 처리, 밀봉포장의 3중 보호로 저장 기간 내내 품질이 유지됩니다.</p>
+    </div></div>
+  <div class="effect-box">
+    <p class="effect-box-title">✦ 종합 적용 효과</p>
+    <div class="effect-list"><div class="effect-item">오메가-3 함량 8~17% (중량당) — 아마종실 기반 최고 수준</div><div class="effect-item">시안화 화합물 완전 제거로 안전한 급여 보장</div><div class="effect-item">어취 없음·기호성 우수 (기존 어유 기반 제품 대비)</div><div class="effect-item">체세포수 감소 및 항염증 효과 (젖소)</div><div class="effect-item">번식 성적 개선·등심단면적 향상 (한우)</div><div class="effect-item">유익미생물과 시너지로 밀사·악취 스트레스 감소</div></div>
   </div>
-</div>
+</section>
+<section class="section" style="background:var(--accent-pale)">
+  <p class="section-label">Benefits</p>
+  <h2 class="section-title">축종별 <em>급여 효과</em></h2>
+  <div class="simple-grid"><div class="simple-card" style="border-top:4px solid #4a7010">
+      <div class="sc-icon">🐄</div>
+      <p class="sc-title" style="color:#4a7010">한우 번식우·비육우</p>
+      <p class="sc-desc"></p>
+      <ul class='sc-list' style='--ac:#4a7010'><li>번식 성적 개선</li><li>등심단면적 향상</li><li>근내지방(마블링) 개선</li><li>사료 효율 향상</li></ul>
+    </div><div class="simple-card" style="border-top:4px solid #4a7010">
+      <div class="sc-icon">🥛</div>
+      <p class="sc-title" style="color:#4a7010">착유우</p>
+      <p class="sc-desc"></p>
+      <ul class='sc-list' style='--ac:#4a7010'><li>체세포수 감소</li><li>항염증 효과</li><li>유성분 개선</li><li>분만 전후 에너지 공급</li></ul>
+    </div><div class="simple-card" style="border-top:4px solid #4a7010">
+      <div class="sc-icon">🐷</div>
+      <p class="sc-title" style="color:#4a7010">양돈</p>
+      <p class="sc-desc"></p>
+      <ul class='sc-list' style='--ac:#4a7010'><li>면역 강화·항염증</li><li>밀사 스트레스 감소</li><li>분변 악취 감소</li><li>사료 효율 개선</li></ul>
+    </div><div class="simple-card" style="border-top:4px solid #4a7010">
+      <div class="sc-icon">🐔</div>
+      <p class="sc-title" style="color:#4a7010">양계</p>
+      <p class="sc-desc"></p>
+      <ul class='sc-list' style='--ac:#4a7010'><li>면역 강화</li><li>계란 내 오메가-3 향상</li><li>산란율 유지</li><li>성장 촉진</li></ul>
+    </div></div>
+</section>
 
-<div class="eff-sec">
-  <div class="sec-eye"><span class="sec-tag">급여 효과</span><div class="sec-line" style="background:rgba(106,152,40,0.2);"></div></div>
-  <div class="eff-grid">
-    <div class="eff-card"><div class="ec-ico">🐄</div><p class="ec-title">번식성적 개선</p><p class="ec-desc">번식성적 개선 및 가축의 생산성 향상</p></div>
-    <div class="eff-card"><div class="ec-ico">🥩</div><p class="ec-title">육질 개선</p><p class="ec-desc">등심단면적·근내지방 개선으로 고급육 생산</p></div>
-    <div class="eff-card"><div class="ec-ico">⚡</div><p class="ec-title">사료 효율 개선</p><p class="ec-desc">에너지 밀도 향상으로 사료 요구율 개선</p></div>
-    <div class="eff-card"><div class="ec-ico">🥛</div><p class="ec-title">체세포수 감소</p><p class="ec-desc">젖소 체세포수 감소 및 항염증 효과 (면역)</p></div>
-    <div class="eff-card"><div class="ec-ico">🐟</div><p class="ec-title">오메가-3 축적</p><p class="ec-desc">축산물 내 오메가-3 및 CLA 지방산 함량 증가</p></div>
-    <div class="eff-card"><div class="ec-ico">😌</div><p class="ec-title">스트레스 감소</p><p class="ec-desc">밀사·분변악취·스트레스 저감. 면역력 및 항병력 개선</p></div>
-  </div>
-</div>
 
-<div class="dose-sec">
-  <div class="sec-eye"><span class="sec-tag">용법 및 용량</span><div class="sec-line"></div></div>
-  <table class="dose-table">
-    <thead><tr><th>축종</th><th>급여 방법</th><th>권장 급여량</th></tr></thead>
-    <tbody>
-      <tr><td>한우 번식우 · 비육우</td><td>사료에 혼합</td><td class="amt">200g / 두당 · 일</td></tr>
-      <tr><td>착유우</td><td>사료에 혼합</td><td class="amt">300g / 두당 · 일</td></tr>
-      <tr><td>양돈</td><td>사료에 혼합</td><td class="amt">30~100g / 두 · 일</td></tr>
-      <tr><td>산란계 · 육계</td><td>사료에 혼합</td><td class="amt">5~20g / 수 · 일</td></tr>
-      <tr><td>배합사료 첨가</td><td>사료 제조 시</td><td class="amt">1~5% / 배합사료 내</td></tr>
-    </tbody>
-  </table>
-</div>
+<section class="section dosage-section">
+  <p class="section-label">Dosage Guide</p>
+  <h2 class="section-title">권장 <em class="gold-em">급여량</em></h2>
+  <p class="section-desc" style="color:rgba(255,255,255,0.6)">사료에 혼합하여 급여하며, 사육 단계와 목적에 따라 조정하십시오.</p>
+  <div class="dose-cards"><div class="dose-card">
+      <div class="dose-left">
+        <p class="dose-animal">🐄 한우 번식우·비육우</p>
+        <p class="dose-method">사료에 혼합</p>
+      </div>
+      <div class="dose-right">
+        <p class="dose-amount">200g</p>
+        <p class="dose-unit">/ 두당 · 일</p>
+      </div>
+    </div><div class="dose-card">
+      <div class="dose-left">
+        <p class="dose-animal">🥛 착유우</p>
+        <p class="dose-method">사료에 혼합</p>
+      </div>
+      <div class="dose-right">
+        <p class="dose-amount">300g</p>
+        <p class="dose-unit">/ 두당 · 일</p>
+      </div>
+    </div><div class="dose-card">
+      <div class="dose-left">
+        <p class="dose-animal">🐷 양돈</p>
+        <p class="dose-method">사료에 혼합</p>
+      </div>
+      <div class="dose-right">
+        <p class="dose-amount">30~100g</p>
+        <p class="dose-unit">/ 두 · 일</p>
+      </div>
+    </div><div class="dose-card">
+      <div class="dose-left">
+        <p class="dose-animal">🐔 산란계·육계</p>
+        <p class="dose-method">사료에 혼합</p>
+      </div>
+      <div class="dose-right">
+        <p class="dose-amount">5~20g</p>
+        <p class="dose-unit">/ 수 · 일</p>
+      </div>
+    </div><div class="dose-card">
+      <div class="dose-left">
+        <p class="dose-animal">📦 배합사료 첨가</p>
+        <p class="dose-method">사료에 혼합</p>
+      </div>
+      <div class="dose-right">
+        <p class="dose-amount">1~5%</p>
+        <p class="dose-unit">/ 배합사료 내</p>
+      </div>
+    </div></div>
+  <div class="dose-note">📌 <strong>판매원: 주식회사 에프앤티바이오 · 서울 송파구 올림픽로 336, 2107호 · 02-6498-3588 / 010-5269-1459</strong>. 기호성이 우수하여 급여 전환이 쉽고, 오메가-3 특유의 어취가 없어 전 축종에 적용이 간편합니다.</div>
+</section>
 
-<div class="footer">
-  <div class="ftl">
-    <p class="ft-lbl">상담 및 주문</p>
-    <p class="ft-main">린텍스 — 오메가-3가 풍부한 고품질 사료 첨가제<br>번식성적·육질·생산성을 동시에 개선하세요</p>
-    <div class="ft-cons">
-      <div class="fc"><span class="fcl">Company</span><span class="fcv">주식회사 에프앤티바이오</span></div>
-      <div class="fc"><span class="fcl">Address</span><span class="fcv">서울특별시 송파구 올림픽로 336, 2107호</span></div>
-      <div class="fc"><span class="fcl">Tel</span><span class="fcv">02-6498-3588 / 010-5269-1459</span></div>
-    </div>
-  </div>
-  <div class="ftr">
-    <p class="ftr-co">에프앤티바이오</p>
-    <p class="ftr-main">즉시<br>상담</p>
-    <p class="ftr-tel">010-5269-1459</p>
-  </div>
+<div class="footer-cta">
+  <p class="footer-cta-title">제품 상담 및 주문</p>
+  <p class="footer-cta-sub">린텍스에 대한 더 자세한 정보는 전화로 문의해 주세요</p>
+  <a class="footer-cta-tel" href="tel:01052691459">010-5269-1459</a>
+  <p style="font-size:14px;color:rgba(255,255,255,0.75);">✉️ h2691459@naver.com</p>
 </div>
+<div class="footer-info">
+  <p><strong>(주)에프앤티바이오</strong><br>서울특별시 송파구 올림픽로 336, 2107호 · TEL 02-6498-3588 / 010-5269-1459</p>
 </div>
 </body>
 </html>

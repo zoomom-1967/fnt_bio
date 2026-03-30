@@ -2,432 +2,399 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fntbio-co.github.io/fnt_bio/amaril.html">
-<meta property="og:title" content="아마릴 AMARIL — 에프앤티바이오">
-<meta property="og:description" content="에프앤티바이오 제품 상세 정보. 010-5269-1459">
+<meta property="og:title" content="AMARIL (아마릴) — 에프앤티바이오">
+<meta property="og:description" content="천연 식물성 사료 첨가제 | 신남알데하이드 + 유기산 3중 작용 | 에프앤티바이오 010-5269-1459">
 <meta property="og:image" content="https://fntbio-co.github.io/fnt_bio/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:site_name" content="에프앤티바이오">
-<title>아마릴 AMARIL</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+<title>AMARIL (아마릴) — 에프앤티바이오</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cinn:#8a3010;--cinn-mid:#b04820;--cinn-light:#fdf0e8;--cinn-pale:#fff8f4;
-  --sky:#0a90c8;--sky-light:#e0f6ff;
+  --cinn:#8a3010;--cinn-mid:#b04820;--cinn-light:#fdf0e8;
+  --gold:#c89010;--gold-mid:#e8b820;
+  --sky:#0a78c8;--sky-light:#e8f4fc;
   --green:#1a7840;--green-light:#e0f5e8;
-  --gold:#c89010;--gold-light:#fdf5d8;
-  --dark:#180808;--gray:#4a3828;--gl:#f0e0d0;--white:#fff;--cream:#fffaf7;
+  --dark:#1a0808;--gray:#5a4838;--line:#eeddd0;
+  --white:#fff;--cream:#fffaf6;--text:#2a1a10;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Noto Sans KR',sans-serif;background:#b8a898;display:flex;justify-content:center;padding:40px 20px;}
-.flyer{width:794px;background:var(--cream);overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,0.28);}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--text);line-height:1.6;}
 
-.hero{background:linear-gradient(135deg,#100808 0%,#5a2010 45%,#8a4018 100%);position:relative;overflow:hidden;padding:0;}
-.hero::before{content:'';position:absolute;right:-60px;top:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(200,144,16,0.18) 0%,transparent 65%);}
-.htop{display:flex;justify-content:space-between;align-items:center;padding:11px 36px;border-bottom:1px solid rgba(255,255,255,0.1);position:relative;z-index:2;}
-.hbadge{background:var(--gold);color:#3a2000;font-size:10px;font-weight:800;padding:3px 12px;border-radius:2px;letter-spacing:.8px;}
-.hco{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1px;}
-.hbody{display:flex;min-height:215px;position:relative;z-index:2;}
-.hleft{flex:1;padding:30px 36px 34px;}
-.h-kicker{font-size:11px;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:2px;margin-bottom:8px;}
-.hname{font-family:'Montserrat',sans-serif;font-size:72px;font-weight:900;color:#fff;line-height:1;letter-spacing:-1px;margin-bottom:6px;}
-.hname em{color:#f0d060;font-style:normal;}
-.hsub{font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:14px;letter-spacing:1px;}
-.h-tagline{font-size:13.5px;color:rgba(255,255,255,0.78);line-height:1.65;border-left:4px solid #f0d060;padding-left:14px;margin-bottom:18px;}
-.h-tagline strong{color:#f0d060;}
-.hpills{display:flex;gap:7px;flex-wrap:wrap;}
-.hpill{background:rgba(240,208,96,0.12);border:1px solid rgba(240,208,96,0.3);color:#f0d060;font-size:11px;font-weight:700;padding:5px 13px;border-radius:20px;}
-.hright{width:195px;flex-shrink:0;border-left:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px 18px;}
-.aorb{width:135px;height:135px;border-radius:50%;background:radial-gradient(circle at 38% 35%,#f0d060 0%,#a04020 45%,#180808 100%);border:3px solid rgba(240,208,96,0.4);display:flex;align-items:center;justify-content:center;font-size:50px;box-shadow:0 10px 32px rgba(0,0,0,0.4);}
-.aorl{text-align:center;}
-.aorlm{font-size:12px;font-weight:800;color:#f0d060;letter-spacing:.5px;}
-.aorls{font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:1.5px;margin-top:2px;}
+/* 뒤로가기 */
+.back-btn{position:fixed;top:16px;left:16px;z-index:999;background:rgba(26,8,8,0.85);color:#fff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:50px;text-decoration:none;display:flex;align-items:center;gap:8px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:background .2s;}
+.back-btn:hover{background:rgba(10,100,80,0.92);}
 
-/* ACTION STRIP */
-.action-strip{background:var(--dark);display:flex;}
-.as-item{flex:1;padding:13px 10px;text-align:center;border-right:1px solid rgba(255,255,255,0.1);}
-.as-item:last-child{border-right:none;}
-.as-icon{font-size:20px;margin-bottom:4px;}
-.as-title{font-size:12px;font-weight:800;color:#f0d060;margin-bottom:2px;}
-.as-desc{font-size:10px;color:rgba(255,255,255,0.5);line-height:1.4;}
+/* HERO */
+.hero{background:linear-gradient(150deg,#1a0808 0%,#6a2808 50%,#a04018 100%);padding:100px 24px 52px;position:relative;overflow:hidden;text-align:center;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,144,16,0.2) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold) 0%,#f0e060 50%,var(--gold) 100%);}
+.hero-badge{display:inline-block;background:rgba(240,208,96,0.15);border:1px solid rgba(240,208,96,0.4);color:#f0d060;font-size:12px;font-weight:700;padding:5px 16px;border-radius:50px;letter-spacing:1px;margin-bottom:20px;}
+.hero-icon{font-size:72px;margin-bottom:16px;display:block;}
+.hero-name{font-family:'Montserrat',sans-serif;font-size:64px;font-weight:900;color:#fff;letter-spacing:-2px;line-height:1;margin-bottom:8px;}
+.hero-name em{color:#f0d060;font-style:normal;}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-bottom:24px;}
+.hero-tagline{font-size:17px;color:rgba(255,255,255,0.88);line-height:1.75;max-width:560px;margin:0 auto 28px;border-left:4px solid #f0d060;text-align:left;padding-left:18px;}
+.hero-tagline strong{color:#f0d060;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.hero-pill{background:rgba(240,208,96,0.12);border:1px solid rgba(240,208,96,0.35);color:#f0d060;font-size:13px;font-weight:700;padding:7px 18px;border-radius:50px;}
 
-/* THREE PILLARS */
-.pillar-sec{background:var(--white);padding:28px 36px;}
-.sec-eye{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
-.sec-tag{background:var(--dark);color:#f0d060;font-size:9px;font-weight:800;padding:4px 13px;letter-spacing:2px;text-transform:uppercase;border-radius:2px;}
-.sec-line{flex:1;height:1px;background:var(--gl);}
-.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.pillar-card{border-radius:6px;overflow:hidden;border:1px solid var(--gl);}
-.pillar-card.enzyme{border-top:3px solid var(--sky);}
-.pillar-card.antioxid{border-top:3px solid var(--cinn-mid);}
-.pillar-card.antibac{border-top:3px solid var(--green);}
-.pc-head{padding:14px 16px;display:flex;align-items:center;gap:8px;}
-.pillar-card.enzyme .pc-head{background:#e0f4ff;}
-.pillar-card.antioxid .pc-head{background:var(--cinn-light);}
-.pillar-card.antibac .pc-head{background:var(--green-light);}
-.pc-ico{font-size:22px;}
-.pc-title{font-size:14px;font-weight:800;}
-.pillar-card.enzyme .pc-title{color:var(--sky);}
-.pillar-card.antioxid .pc-title{color:var(--cinn);}
-.pillar-card.antibac .pc-title{color:var(--green);}
-.pc-body{padding:14px 16px;background:var(--cream);}
-.pc-sub{font-size:11px;color:var(--gray);margin-bottom:8px;font-style:italic;}
-.pc-items{list-style:none;display:flex;flex-direction:column;gap:5px;}
-.pc-items li{font-size:12px;color:var(--dark);display:flex;gap:7px;line-height:1.5;}
-.pc-items li::before{content:'→';font-weight:700;flex-shrink:0;}
-.pillar-card.enzyme .pc-items li::before{color:var(--sky);}
-.pillar-card.antioxid .pc-items li::before{color:var(--cinn-mid);}
-.pillar-card.antibac .pc-items li::before{color:var(--green);}
+/* 요약 스트립 */
+.summary-strip{background:var(--dark);display:grid;grid-template-columns:repeat(4,1fr);}
+.ss-item{padding:22px 12px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);}
+.ss-item:last-child{border-right:none;}
+.ss-icon{font-size:30px;margin-bottom:8px;}
+.ss-title{font-size:15px;font-weight:800;color:#f0d060;margin-bottom:4px;}
+.ss-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.4;}
 
-/* MECHANISM */
-.mech-sec{background:var(--cinn-pale);padding:26px 36px;border-top:3px solid var(--cinn-mid);}
-.mech-sec .sec-tag{background:var(--cinn);color:#fff;}
-.mech-inner{display:flex;gap:24px;margin-top:16px;align-items:stretch;}
-.mech-left{flex:1;display:flex;flex-direction:column;gap:12px;}
-.mech-card{background:var(--white);border:1px solid var(--gl);padding:16px 18px;border-radius:6px;display:flex;gap:12px;align-items:flex-start;}
-.mc-ico{font-size:24px;flex-shrink:0;}
-.mc-body{}
-.mc-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 10px;border-radius:10px;margin-bottom:5px;}
-.mech-card:first-child .mc-badge{background:var(--sky-light);color:var(--sky);}
-.mech-card:last-child .mc-badge{background:var(--cinn-light);color:var(--cinn);}
-.mc-title{font-size:13.5px;font-weight:800;color:var(--dark);margin-bottom:5px;}
-.mc-desc{font-size:12px;color:var(--gray);line-height:1.65;}
-.mc-desc em{font-style:normal;font-weight:700;}
-.mech-card:first-child .mc-desc em{color:var(--sky);}
-.mech-card:last-child .mc-desc em{color:var(--cinn);}
-.mech-right{width:220px;flex-shrink:0;background:var(--dark);padding:20px 18px;border-radius:6px;}
-.mr-title{font-size:11px;font-weight:700;color:#f0d060;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
-.mr-items{display:flex;flex-direction:column;gap:8px;}
-.mr-item{display:flex;gap:8px;font-size:12px;color:rgba(255,255,255,0.75);line-height:1.5;}
-.mr-item::before{content:'✓';color:#f0d060;font-weight:700;flex-shrink:0;}
+/* 공통 섹션 */
+.section{padding:52px 24px;border-bottom:1px solid var(--line);}
+.section-label{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--cinn-mid);margin-bottom:8px;}
+.section-title{font-size:28px;font-weight:900;color:var(--dark);line-height:1.3;margin-bottom:10px;letter-spacing:-.5px;}
+.section-title em{color:var(--cinn-mid);font-style:normal;}
+.section-desc{font-size:16px;color:var(--gray);line-height:1.8;margin-bottom:36px;max-width:640px;}
 
-/* DOSAGE */
-.dose-sec{background:var(--dark);padding:26px 36px;}
-.dose-sec .sec-tag{background:var(--gold);color:#3a2000;}
-.dose-sec .sec-line{background:rgba(255,255,255,0.1);}
-.dose-table{width:100%;border-collapse:collapse;margin-top:16px;}
-.dose-table th{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);font-size:11px;font-weight:700;padding:9px 14px;text-align:center;letter-spacing:.5px;}
-.dose-table th:first-child{text-align:left;}
-.dose-table td{padding:9px 14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);text-align:center;color:rgba(255,255,255,0.8);}
-.dose-table td:first-child{text-align:left;font-weight:600;color:#fff;}
-.dose-table tr:last-child td{border-bottom:none;}
-.dose-table td.amt{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#f0d060;}
+/* 3중 작용 카드 */
+.pillars{display:flex;flex-direction:column;gap:22px;}
+.pillar-card{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 3px 16px rgba(0,0,0,0.07);}
+.pillar-head{display:flex;align-items:center;gap:16px;padding:22px 26px;}
+.pillar-head.enzyme{background:var(--sky-light);border-bottom:3px solid var(--sky);}
+.pillar-head.antioxid{background:var(--cinn-light);border-bottom:3px solid var(--cinn-mid);}
+.pillar-head.antibac{background:var(--green-light);border-bottom:3px solid var(--green);}
+.pillar-icon{font-size:40px;}
+.pillar-num{font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:4px;}
+.enzyme .pillar-num{color:var(--sky);}
+.antioxid .pillar-num{color:var(--cinn-mid);}
+.antibac .pillar-num{color:var(--green);}
+.pillar-name{font-size:22px;font-weight:900;color:var(--dark);margin-bottom:3px;}
+.pillar-sub{font-size:14px;color:var(--gray);}
+.pillar-body{background:var(--white);padding:26px;}
+.pillar-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.pillar-list li{display:flex;align-items:flex-start;gap:8px;font-size:15px;color:var(--text);line-height:1.5;}
+.pillar-list li::before{content:'→';font-weight:900;flex-shrink:0;margin-top:1px;}
+.enzyme .pillar-list li::before{color:var(--sky);}
+.antioxid .pillar-list li::before{color:var(--cinn-mid);}
+.antibac .pillar-list li::before{color:var(--green);}
 
-/* FOOTER */
-.footer{background:#100808;display:flex;overflow:hidden;}
-.ftl{flex:1;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px;}
-.ft-lbl{font-size:10px;font-weight:700;color:#f0d060;letter-spacing:2px;text-transform:uppercase;}
-.ft-main{font-size:14px;font-weight:900;color:#fff;line-height:1.4;}
-.ft-cons{display:flex;gap:18px;margin-top:8px;}
-.fc{display:flex;flex-direction:column;gap:2px;}
-.fcl{font-size:8px;font-weight:700;letter-spacing:1.5px;color:#f0d060;text-transform:uppercase;}
-.fcv{font-size:11px;color:rgba(255,255,255,0.7);line-height:1.5;}
-.ftr{width:175px;flex-shrink:0;background:var(--cinn-mid);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 14px;text-align:center;gap:3px;}
-.ftr-co{font-size:11px;color:rgba(255,255,255,0.65);}
-.ftr-main{font-size:18px;font-weight:900;color:#fff;}
-.ftr-tel{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#f0d060;margin-top:3px;}
+/* 성분 작용 원리 */
+.mechanism{background:var(--cinn-light);}
+.mech-cards{display:flex;flex-direction:column;gap:16px;margin-bottom:24px;}
+.mech-card{background:var(--white);border-radius:14px;padding:28px;border-left:5px solid var(--cinn-mid);box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+.mech-badge{display:inline-block;font-size:11px;font-weight:800;padding:4px 14px;border-radius:50px;margin-bottom:12px;letter-spacing:.5px;}
+.mech-badge.sky{background:var(--sky-light);color:var(--sky);}
+.mech-badge.cinn{background:var(--cinn-light);color:var(--cinn);border:1px solid rgba(138,48,16,0.2);}
+.mech-name{font-size:19px;font-weight:900;color:var(--dark);margin-bottom:10px;line-height:1.4;}
+.mech-desc{font-size:15px;color:var(--gray);line-height:1.8;}
+.mech-desc em{color:var(--cinn-mid);font-style:normal;font-weight:700;}
+.effect-box{background:var(--dark);border-radius:14px;padding:30px 28px;}
+.effect-box-title{font-size:15px;font-weight:800;color:#f0d060;letter-spacing:1px;margin-bottom:18px;}
+.effect-list{display:flex;flex-direction:column;gap:12px;}
+.effect-item{display:flex;align-items:flex-start;gap:10px;font-size:16px;color:rgba(255,255,255,0.82);line-height:1.6;}
+.effect-item::before{content:'✓';color:#f0d060;font-weight:900;flex-shrink:0;font-size:18px;margin-top:1px;}
 
-/* ══════════════════════════════════════
-   반응형 — 태블릿 (768px 이하)
-══════════════════════════════════════ */
-@media (max-width: 768px) {
-  body{padding:20px 12px;}
-  .flyer{width:100%;box-shadow:0 8px 32px rgba(0,0,0,0.18);}
+/* 적용 축종 */
+.species-section{background:var(--white);}
+.species-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.species-card{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:26px 22px;border-top:5px solid var(--cinn-mid);}
+.species-icon{font-size:44px;margin-bottom:12px;}
+.species-name{font-size:20px;font-weight:900;color:var(--dark);margin-bottom:10px;}
+.species-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.species-list li{font-size:15px;color:var(--gray);display:flex;align-items:center;gap:8px;}
+.species-list li::before{content:'•';color:var(--cinn-mid);font-size:18px;}
 
-  /* 히어로 */
-  .hbody{flex-direction:column;min-height:auto;}
-  .hleft{padding:22px 20px 20px;}
-  .hname{font-size:38px !important;letter-spacing:-1px !important;}
-  .hright{width:100% !important;border-left:none !important;border-top:1px solid rgba(255,255,255,0.1);flex-direction:row;padding:16px 20px;gap:16px;justify-content:center;}
+/* 급여량 */
+.dosage-section{background:var(--dark);}
+.dosage-section .section-label{color:#f0d060;}
+.dosage-section .section-title{color:#fff;}
+.dosage-section .section-desc{color:rgba(255,255,255,0.6);}
+.dose-cards{display:flex;flex-direction:column;gap:14px;}
+.dose-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.dose-animal{font-size:18px;font-weight:800;color:#fff;margin-bottom:5px;}
+.dose-method{font-size:13px;color:rgba(255,255,255,0.5);}
+.dose-right{text-align:right;flex-shrink:0;}
+.dose-amount{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:#f0d060;}
+.dose-unit{font-size:12px;color:rgba(255,255,255,0.4);margin-top:2px;}
+.dose-note{margin-top:22px;background:rgba(240,208,96,0.1);border:1px solid rgba(240,208,96,0.25);border-radius:12px;padding:18px 22px;font-size:15px;color:rgba(255,255,255,0.72);line-height:1.75;}
+.dose-note strong{color:#f0d060;}
 
-  /* 컴포넌트 섹션들 */
-  .comp-inner,.comp-sec .comp-inner,
-  .desc-grid,.feat-grid,.points-grid,
-  .risk-grid,.data-tables,.full-data,
-  .rec-cards,.feat-grid{
-    display:flex !important;flex-direction:column !important;gap:12px !important;
-  }
-  .comp-right,.comp-left{width:100% !important;}
-  .desc-grid,.feat-grid,.points-grid,.risk-grid{grid-template-columns:1fr !important;}
-  .data-tables,.full-data{grid-template-columns:1fr !important;}
-  .rec-cards{grid-template-columns:1fr !important;}
-  .eff-grid{grid-template-columns:repeat(2,1fr) !important;}
-  .bact-grid{grid-template-columns:repeat(2,1fr) !important;}
+/* CTA 푸터 */
+.footer-cta{background:var(--cinn-mid);padding:44px 24px;text-align:center;}
+.footer-cta-title{font-size:24px;font-weight:900;color:#fff;margin-bottom:8px;}
+.footer-cta-sub{font-size:15px;color:rgba(255,255,255,0.78);margin-bottom:22px;}
+.footer-cta-tel{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900;color:#fff;display:block;margin-bottom:8px;text-decoration:none;}
+.footer-info{background:var(--dark);padding:26px 24px;text-align:center;}
+.footer-info p{font-size:13px;color:rgba(255,255,255,0.42);line-height:1.9;}
+.footer-info strong{color:rgba(255,255,255,0.65);}
 
-  /* 섹션 패딩 */
-  .comp-sec,.feat-sec,.risk-sec,.desc-sec,.eff-sec,
-  .dose-sec,.cmp-sec,.mech-sec,.flow-sec,.bact-sec,
-  .points-sec,.rec-sec,.combo-sec,.caution-sec,
-  .data-sec,.dose-sec,.contact-bar{
-    padding:20px 16px !important;
-  }
-
-  /* 테이블 */
-  .dose-table,.cmp-table,.dt-table{font-size:11px !important;}
-  .dose-table th,.dose-table td,
-  .cmp-table th,.cmp-table td,
-  .dt-table th,.dt-table td{padding:7px 8px !important;}
-
-  /* 급여량 섹션 */
-  .dose-inner{flex-direction:column !important;}
-  .dose-right{width:100% !important;}
-
-  /* 푸터 */
-  .footer{flex-direction:column !important;}
-  .ftl{padding:18px 16px !important;}
-  .ft-cons{flex-direction:column !important;gap:10px !important;}
-  .ftr{width:100% !important;padding:16px !important;}
-  .ft-left{padding:18px 16px !important;}
-  .ft-contacts{flex-direction:column !important;gap:10px !important;}
-
-  /* 카탈로그 돌아가기 버튼 */
-  .back-to-catalog{top:10px;left:10px;font-size:12px;padding:7px 14px;}
-
-  /* 헤더 상단바 */
-  .htop{padding:8px 16px !important;flex-wrap:wrap;gap:4px;}
-  .hbadge{font-size:9px !important;}
-
-  /* 키포인트 스트립 */
-  .kp-strip{flex-wrap:wrap;}
-  .kp-item{flex:1 1 45%;border-bottom:1px solid rgba(255,255,255,0.1);}
-
-  /* power badge */
-  .power-badge{flex-wrap:wrap;gap:8px;padding:14px 16px !important;text-align:center;}
-
-  /* Pain strip */
-  .ps-items{flex-direction:column;gap:8px;}
-  .pain-strip{padding:14px 16px !important;}
-  .thi-strip{flex-direction:column !important;}
-  .thi-left{padding:14px 16px !important;}
-  .thi-right{flex-direction:row;border-top:1px solid rgba(255,255,255,0.2);}
-  .thi-box{flex:1;}
-
-  /* danger strip */
-  .danger-strip{padding:12px 16px !important;}
-  .ds-subs{flex-direction:column;gap:5px;}
-
-  /* dose section dark */
-  .dose-note{font-size:11px !important;}
-
-  /* 메커니즘 */
-  .mech-formula{flex-direction:column;align-items:center;}
-  .mf-plus,.mf-arrow{padding:8px 0;}
-
-  /* 플로우 차트 */
-  .flow-chart{flex-direction:column;}
-  .fc-plus{display:none;}
-
-  /* 결과 칩스 */
-  .result-chips{gap:6px;}
-  .rc{font-size:11px;padding:5px 12px;}
-
-  /* 비교표 */
-  .cmp-sec .sec-tag{font-size:8px;}
-
-  /* 도스 섹션 */
-  .dose-sec .dose-inner{flex-direction:column;}
-  .dose-rows{gap:6px;}
+/* 반응형 */
+@media(min-width:640px){
+  .hero{padding:110px 56px 60px;}
+  .hero-name{font-size:80px;}
+  .hero-tagline{font-size:19px;}
+  .section{padding:64px 56px;}
+  .section-title{font-size:32px;}
+  .mech-cards{display:grid;grid-template-columns:1fr 1fr;}
 }
-
-/* ══════════════════════════════════════
-   반응형 — 모바일 소형 (480px 이하)
-══════════════════════════════════════ */
-@media (max-width: 480px) {
-  body{padding:10px 6px;}
-  .hname{font-size:30px !important;}
-  .hpills{gap:5px;}
-  .hpill{font-size:10px !important;padding:4px 10px !important;}
-  .eff-grid{grid-template-columns:1fr !important;}
-  .bact-grid{grid-template-columns:repeat(2,1fr) !important;}
-  .kp-item{flex:1 1 100%;}
-  .dose-table,.cmp-table{font-size:10.5px !important;}
-  .ftr-tel{font-size:15px !important;}
-  .cb-tel{font-size:16px !important;}
+@media(max-width:480px){
+  .hero-name{font-size:46px;}
+  .hero-tagline{font-size:15px;}
+  .hero-pill{font-size:12px;padding:6px 13px;}
+  .summary-strip{grid-template-columns:repeat(2,1fr);}
+  .ss-item:nth-child(2){border-right:none;}
+  .ss-item:nth-child(3){border-top:1px solid rgba(255,255,255,0.08);}
+  .ss-item:nth-child(4){border-top:1px solid rgba(255,255,255,0.08);}
+  .section-title{font-size:22px;}
+  .section-desc{font-size:14px;}
+  .pillar-list{grid-template-columns:1fr;}
+  .pillar-list li{font-size:14px;}
+  .species-grid{grid-template-columns:1fr;}
+  .dose-card{flex-direction:column;align-items:flex-start;}
+  .dose-right{text-align:left;}
+  .dose-amount{font-size:32px;}
+  .footer-cta-tel{font-size:28px;}
+  .mech-desc,.effect-item{font-size:14px;}
 }
-</style>
-
-<style>
-.back-to-catalog {
-  position: fixed;
-  top: 16px;
-  left: 16px;
-  z-index: 9999;
-  background: rgba(10,24,32,0.88);
-  color: #fff;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 9px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.28);
-  transition: background 0.2s;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.15);
-}
-.back-to-catalog:hover { background: rgba(10,100,80,0.95); }
 </style>
 </head>
 <body>
-<a class="back-to-catalog" href="https://fntbio-co.github.io/fnt_bio/index.html">← 카탈로그로 돌아가기</a>
 
-<div class="flyer">
+<a class="back-btn" href="https://fntbio-co.github.io/fnt_bio/index.html">← 카탈로그로 돌아가기</a>
 
-<div class="hero">
-  <div class="htop">
-    <span class="hbadge">제품개발 및 마케팅 · 주식회사 에프앤티바이오</span>
-    <span class="hco">Cinnamaldehyde + Organic Acid</span>
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-badge">Natural Phytogenic Feed Additive · 천연 식물성 사료 첨가제</span>
+  <span class="hero-icon">🌿</span>
+  <h1 class="hero-name"><em>AMARIL</em></h1>
+  <p class="hero-sub">아마릴 — Cinnamaldehyde + Organic Acid</p>
+  <div class="hero-tagline">
+    <strong>신남알데하이드 + 유기산</strong>의 강력한 결합 시너지.<br>
+    효소 강화 · 산화방지 · 천연 항균의 <strong>3중 작용</strong>으로<br>
+    소화율과 생산성을 동시에 극대화합니다.
   </div>
-  <div class="hbody">
-    <div class="hleft">
-      <p class="h-kicker">Natural Phytogenic Feed Additive · 천연 식물성 사료 첨가제</p>
-      <h1 class="hname"><em>AMARIL</em></h1>
-      <p class="hsub">아마릴 — 신남알데하이드와 유기산의 결합효과</p>
-      <div class="h-tagline">
-        <strong>신남알데하이드(Cinnamaldehyde) + 유기산(Organic Acid)</strong>의 결합.<br>
-        효소 강화 · 산화방지 · 천연 항균의 3중 작용으로 소화율과 건강을 동시에 개선합니다.
-      </div>
-      <div class="hpills">
-        <span class="hpill">신남알데하이드</span>
-        <span class="hpill">유기산 복합</span>
-        <span class="hpill">천연 항균</span>
-        <span class="hpill">효소 강화</span>
-        <span class="hpill">항산화</span>
-      </div>
-    </div>
-    <div class="hright">
-      <div class="aorb">🌿</div>
-      <div class="aorl">
-        <p class="aorlm">AMARIL</p>
-        <p class="aorls">Phytogenic Additive</p>
-      </div>
-    </div>
+  <div class="hero-pills">
+    <span class="hero-pill">🌿 신남알데하이드</span>
+    <span class="hero-pill">⚗️ 유기산 복합</span>
+    <span class="hero-pill">🚫 천연 항균</span>
+    <span class="hero-pill">⚡ 효소 강화</span>
+    <span class="hero-pill">🛡️ 항산화</span>
+    <span class="hero-pill">💊 항생제 대체</span>
+  </div>
+</section>
+
+<!-- 요약 스트립 -->
+<div class="summary-strip">
+  <div class="ss-item">
+    <div class="ss-icon">⚗️</div>
+    <p class="ss-title">효소 강화</p>
+    <p class="ss-desc">소화·흡수율 극대화</p>
+  </div>
+  <div class="ss-item">
+    <div class="ss-icon">🛡️</div>
+    <p class="ss-title">산화방지</p>
+    <p class="ss-desc">상피세포 보호</p>
+  </div>
+  <div class="ss-item">
+    <div class="ss-icon">🚫</div>
+    <p class="ss-title">천연 항균</p>
+    <p class="ss-desc">병원체 컨트롤</p>
+  </div>
+  <div class="ss-item">
+    <div class="ss-icon">📈</div>
+    <p class="ss-title">생산성 향상</p>
+    <p class="ss-desc">성장·사료효율 개선</p>
   </div>
 </div>
 
-<div class="action-strip">
-  <div class="as-item"><div class="as-icon">⚗️</div><p class="as-title">효소 강화</p><p class="as-desc">소화·흡수율 극대화</p></div>
-  <div class="as-item"><div class="as-icon">🛡️</div><p class="as-title">산화방지</p><p class="as-desc">항산화·상피세포 보호</p></div>
-  <div class="as-item"><div class="as-icon">🚫</div><p class="as-title">천연 항균</p><p class="as-desc">병원체 컨트롤</p></div>
-  <div class="as-item"><div class="as-icon">🔬</div><p class="as-title">소화</p><p class="as-desc">소화율·영양소 흡수</p></div>
-</div>
+<!-- 3중 핵심 작용 -->
+<section class="section" style="background:var(--white)">
+  <p class="section-label">Core Mechanism</p>
+  <h2 class="section-title">3중 핵심 <em>작용 메커니즘</em></h2>
+  <p class="section-desc">아마릴은 단순한 항균제가 아닙니다. 소화 효소 강화, 항산화, 장내 세균총 조절이라는 세 가지 경로를 동시에 자극하여 가축의 건강과 생산성을 근본부터 개선합니다.</p>
+  <div class="pillars">
 
-<div class="pillar-sec">
-  <div class="sec-eye"><span class="sec-tag">3중 핵심 작용 메커니즘</span><div class="sec-line"></div></div>
-  <div class="pillar-grid">
-    <div class="pillar-card enzyme">
-      <div class="pc-head"><span class="pc-ico">⚗️</span><p class="pc-title">효소작용 강화</p></div>
-      <div class="pc-body">
-        <p class="pc-sub">소화율·영양소 흡수율 극대화</p>
-        <ul class="pc-items">
-          <li>식욕 자극</li>
-          <li>효소 분비 촉진</li>
-          <li>위액 분비 강화</li>
-          <li>펩신 안정화</li>
+    <div class="pillar-card">
+      <div class="pillar-head enzyme">
+        <span class="pillar-icon">⚗️</span>
+        <div>
+          <p class="pillar-num enzyme">01 · ENZYME ACTIVATION</p>
+          <p class="pillar-name">효소 작용 강화</p>
+          <p class="pillar-sub">소화율 · 영양소 흡수율 극대화</p>
+        </div>
+      </div>
+      <div class="pillar-body">
+        <ul class="pillar-list enzyme">
+          <li>식욕 자극 및 사료 섭취량 증가</li>
+          <li>소화 효소 분비 촉진</li>
+          <li>위액 · 펩신 분비 강화</li>
           <li>췌장 효소 자극</li>
           <li>장내 점도 감소</li>
+          <li>영양소 이용률 향상</li>
         </ul>
       </div>
     </div>
-    <div class="pillar-card antioxid">
-      <div class="pc-head"><span class="pc-ico">🛡️</span><p class="pc-title">산화방지·소화율 개선</p></div>
-      <div class="pc-body">
-        <p class="pc-sub">항산화 + 장벽 강화</p>
-        <ul class="pc-items">
-          <li>항산화 촉진</li>
-          <li>상피세포 보호</li>
-          <li>장세포 재생속도 가속화</li>
+
+    <div class="pillar-card">
+      <div class="pillar-head antioxid">
+        <span class="pillar-icon">🛡️</span>
+        <div>
+          <p class="pillar-num antioxid">02 · ANTIOXIDANT</p>
+          <p class="pillar-name">산화방지 · 소화율 개선</p>
+          <p class="pillar-sub">항산화 + 장벽 강화 + 병원성 오염 감소</p>
+        </div>
+      </div>
+      <div class="pillar-body">
+        <ul class="pillar-list antioxid">
+          <li>강력한 항산화 작용 촉진</li>
+          <li>장 상피세포 보호</li>
+          <li>장세포 재생 가속화</li>
           <li>병원성 오염 감소</li>
           <li>사료 소화율 향상</li>
           <li>영양소 흡수율 개선</li>
         </ul>
       </div>
     </div>
-    <div class="pillar-card antibac">
-      <div class="pc-head"><span class="pc-ico">🚫</span><p class="pc-title">장내 세균총 조절</p></div>
-      <div class="pc-body">
-        <p class="pc-sub">천연 항균 작용</p>
-        <ul class="pc-items">
+
+    <div class="pillar-card">
+      <div class="pillar-head antibac">
+        <span class="pillar-icon">🚫</span>
+        <div>
+          <p class="pillar-num antibac">03 · ANTIBACTERIAL</p>
+          <p class="pillar-name">장내 세균총 조절</p>
+          <p class="pillar-sub">천연 항균 작용 + 유익균 증진</p>
+        </div>
+      </div>
+      <div class="pillar-body">
+        <ul class="pillar-list antibac">
           <li>E.coli · Salmonella · Clostridium 컨트롤</li>
           <li>장내 유산균 활동 촉진</li>
-          <li>독소 생산 감소·억제</li>
+          <li>독소 생산 감소 및 억제</li>
           <li>장내 이상발효 억제</li>
           <li>장벽 기능 강화</li>
+          <li>항생제 대체 가능</li>
         </ul>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="mech-sec">
-  <div class="sec-eye"><span class="sec-tag">핵심 성분 작용 원리</span><div class="sec-line" style="background:rgba(138,48,16,0.2);"></div></div>
-  <div class="mech-inner">
-    <div class="mech-left">
-      <div class="mech-card">
-        <div class="mc-ico">🌿</div>
-        <div class="mc-body">
-          <span class="mc-badge">신남알데하이드 (Cinnamaldehyde)</span>
-          <p class="mc-title">세포 투과성을 변경하여 유기산 침투 통로 형성</p>
-          <p class="mc-desc">신남알데하이드가 박테리아 세포막을 <em>해리된 형태로 변형</em>시켜 유기산이 침투할 수 있는 모공 구조를 만듭니다. 세포 투과성 증가로 항균 효율이 극대화됩니다.</p>
-        </div>
-      </div>
-      <div class="mech-card">
-        <div class="mc-ico">⚗️</div>
-        <div class="mc-body">
-          <span class="mc-badge">유기산 (Organic Acid)</span>
-          <p class="mc-title">신남알데하이드가 형성한 모공으로 침투하여 박테리아 사멸 유도</p>
-          <p class="mc-desc">유기산이 <em>박테리아 내부로 직접 침투</em>하여 내부에서 사멸을 유도합니다. 두 성분의 시너지로 단독 사용 대비 압도적인 항균 효과를 발휘합니다.</p>
-        </div>
-      </div>
+  </div>
+</section>
+
+<!-- 성분 작용 원리 -->
+<section class="section mechanism">
+  <p class="section-label">Mechanism of Action</p>
+  <h2 class="section-title">핵심 성분 <em>작용 원리</em></h2>
+  <p class="section-desc">신남알데하이드와 유기산은 각각 독자적으로도 효과가 있지만, 함께 사용할 때 압도적인 시너지를 발휘합니다.</p>
+
+  <div class="mech-cards">
+    <div class="mech-card">
+      <span class="mech-badge sky">신남알데하이드 (Cinnamaldehyde)</span>
+      <p class="mech-name">세포 투과성 변경 →<br>유기산 침투 통로 형성</p>
+      <p class="mech-desc">신남알데하이드가 박테리아 세포막을 <em>해리된 형태로 변형</em>시켜 유기산이 침투할 수 있는 모공 구조를 만듭니다. 세포 투과성 증가로 항균 효율이 극대화됩니다.</p>
     </div>
-    <div class="mech-right">
-      <p class="mr-title">✦ 적용 효과 요약</p>
-      <div class="mr-items">
-        <div class="mr-item">식욕 자극으로 사료 섭취량 증가</div>
-        <div class="mr-item">소화 효소 활성화 → 소화율 향상</div>
-        <div class="mr-item">항산화 → 상피세포 보호</div>
-        <div class="mr-item">유해균 제어 → 장내 환경 개선</div>
-        <div class="mr-item">유산균 활동 촉진 → 장건강</div>
-        <div class="mr-item">성장 촉진 + 생산성 향상</div>
-        <div class="mr-item">항생제 대체 천연 솔루션</div>
-      </div>
+    <div class="mech-card">
+      <span class="mech-badge cinn">유기산 (Organic Acid)</span>
+      <p class="mech-name">신남알데하이드 통로로 침투 →<br>박테리아 내부에서 사멸 유도</p>
+      <p class="mech-desc">유기산이 <em>박테리아 내부로 직접 침투</em>하여 내부 pH를 낮추고 세포 기능을 파괴합니다. 두 성분의 시너지로 단독 사용 대비 <em>압도적인 항균 효과</em>를 발휘합니다.</p>
     </div>
   </div>
-</div>
 
-<div class="dose-sec">
-  <div class="sec-eye"><span class="sec-tag">권장 급여량</span><div class="sec-line"></div></div>
-  <table class="dose-table">
-    <thead><tr><th>축종별</th><th>급여 방법</th><th>권장 수준</th></tr></thead>
-    <tbody>
-      <tr><td>육계, 산란계, 종계, 오리</td><td>사료에 혼합</td><td class="amt">0.05~0.1% / 사료톤당</td></tr>
-      <tr><td>자돈, 육성비육돈, 모돈</td><td>사료에 혼합</td><td class="amt">0.05~0.1% / 사료톤당</td></tr>
-      <tr><td>양어용</td><td>사료에 혼합</td><td class="amt">0.1% / 사료톤당</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="footer">
-  <div class="ftl">
-    <p class="ft-lbl">제품개발 및 마케팅</p>
-    <p class="ft-main">아마릴(AMARIL) — 신남알데하이드 + 유기산 천연 첨가제<br>효소 강화·산화방지·천연 항균의 3중 작용</p>
-    <div class="ft-cons">
-      <div class="fc"><span class="fcl">Company</span><span class="fcv">주식회사 에프앤티바이오</span></div>
-      <div class="fc"><span class="fcl">Address</span><span class="fcv">서울특별시 송파구 올림픽로 336, 2107호</span></div>
-      <div class="fc"><span class="fcl">Tel</span><span class="fcv">02-6498-3588 / 010-5269-1459</span></div>
+  <div class="effect-box">
+    <p class="effect-box-title">✦ 종합 적용 효과 요약</p>
+    <div class="effect-list">
+      <div class="effect-item">식욕 자극으로 사료 섭취량 증가 및 기호성 향상</div>
+      <div class="effect-item">소화 효소 활성화 → 소화율 및 영양소 흡수 향상</div>
+      <div class="effect-item">항산화 작용 → 장 상피세포 보호 및 재생 촉진</div>
+      <div class="effect-item">유해균 제어 → 장내 환경 개선 및 면역 강화</div>
+      <div class="effect-item">유산균 활동 촉진 → 건강한 장내 세균총 유지</div>
+      <div class="effect-item">성장 촉진 + 생산성 향상 + 사료요구율 개선</div>
+      <div class="effect-item">항생제 사용 감소 → 친환경 천연 대체 솔루션</div>
     </div>
   </div>
-  <div class="ftr">
-    <p class="ftr-co">에프앤티바이오</p>
-    <p class="ftr-main">즉시<br>상담</p>
-    <p class="ftr-tel">010-5269-1459</p>
+</section>
+
+<!-- 적용 축종 -->
+<section class="section species-section">
+  <p class="section-label">Application</p>
+  <h2 class="section-title">적용 <em>축종</em></h2>
+  <p class="section-desc">아마릴은 양돈, 양계, 오리 등 다양한 축종에 폭넓게 적용 가능한 범용 천연 사료첨가제입니다.</p>
+  <div class="species-grid">
+    <div class="species-card">
+      <div class="species-icon">🐷</div>
+      <p class="species-name">양돈</p>
+      <ul class="species-list">
+        <li>자돈 (이유 후 성장기)</li>
+        <li>육성 · 비육돈</li>
+        <li>모돈 (임신 · 포유기)</li>
+      </ul>
+    </div>
+    <div class="species-card">
+      <div class="species-icon">🐔</div>
+      <p class="species-name">양계 · 오리</p>
+      <ul class="species-list">
+        <li>육계</li>
+        <li>산란계 · 종계</li>
+        <li>오리 전 구간</li>
+      </ul>
+    </div>
   </div>
+</section>
+
+<!-- 급여량 -->
+<section class="section dosage-section">
+  <p class="section-label">Dosage Guide</p>
+  <h2 class="section-title">권장 <em style="color:#f0d060">급여량</em></h2>
+  <p class="section-desc">사료에 혼합하여 급여하며, 사육 단계와 목적에 따라 조정하여 사용하십시오.</p>
+  <div class="dose-cards">
+    <div class="dose-card">
+      <div class="dose-left">
+        <p class="dose-animal">🐔 육계 · 산란계 · 종계 · 오리</p>
+        <p class="dose-method">사료에 혼합 급여</p>
+      </div>
+      <div class="dose-right">
+        <p class="dose-amount">500g</p>
+        <p class="dose-unit">/ 사료 톤당</p>
+      </div>
+    </div>
+    <div class="dose-card">
+      <div class="dose-left">
+        <p class="dose-animal">🐷 자돈 · 임신돈 · 포유돈</p>
+        <p class="dose-method">사료에 혼합 급여</p>
+      </div>
+      <div class="dose-right">
+        <p class="dose-amount">1,000g</p>
+        <p class="dose-unit">/ 사료 톤당</p>
+      </div>
+    </div>
+    <div class="dose-card">
+      <div class="dose-left">
+        <p class="dose-animal">🐷 육성 · 비육돈</p>
+        <p class="dose-method">사료에 혼합 급여</p>
+      </div>
+      <div class="dose-right">
+        <p class="dose-amount">500g</p>
+        <p class="dose-unit">/ 사료 톤당</p>
+      </div>
+    </div>
+  </div>
+  <div class="dose-note">
+    📌 <strong>급여 팁:</strong> 장 건강 문제가 있거나 항생제 대체가 필요한 시기에 초기 2주간 상한 용량을 적용하면 효과가 더욱 빠르게 나타납니다. 지속 급여 시 사료 효율 개선 효과를 확인하실 수 있습니다.
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<div class="footer-cta">
+  <p class="footer-cta-title">제품 상담 및 주문</p>
+  <p class="footer-cta-sub">아마릴에 대한 더 자세한 정보는 전화로 문의해 주세요</p>
+  <a class="footer-cta-tel" href="tel:01052691459">010-5269-1459</a>
+  <p style="font-size:14px;color:rgba(255,255,255,0.75);">✉️ h2691459@naver.com</p>
 </div>
+<div class="footer-info">
+  <p>
+    <strong>(주)에프앤티바이오</strong><br>
+    서울특별시 송파구 올림픽로 336, 2107호 · TEL 02-6498-3588 / 010-5269-1459
+  </p>
 </div>
+
 </body>
 </html>
